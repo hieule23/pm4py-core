@@ -25,13 +25,13 @@ def apply(log, paths, parameters=None):
         Paths that we are looking for (expressed as tuple of 2 strings)
     parameters
         Parameters of the algorithm, including:
-            Parameters.ATTRIBUTE_KEY -> Attribute identifying the activity in the log
+            Parameters.ATTRIBUTE_KEY -> Attribute identifying the activity in the log_skeleton
             Parameters.POSITIVE -> Indicate if events should be kept/removed
 
     Returns
     -----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -52,7 +52,7 @@ def apply(log, paths, parameters=None):
 
 def get_paths_from_log(log, attribute_key="concept:name"):
     """
-    Get the paths of the log along with their count
+    Get the paths of the log_skeleton along with their count
 
     Parameters
     ----------
@@ -145,7 +145,7 @@ def filter_log_by_paths(log, paths, variants, vc, threshold, attribute_key="conc
     Returns
     ----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     filtered_log = EventLog()
     fvft = variants[vc[0][0]][0]
@@ -196,7 +196,7 @@ def apply_auto_filter(log, variants=None, parameters=None):
     Returns
     ---------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}

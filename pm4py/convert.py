@@ -1,6 +1,6 @@
 def convert_to_event_log(obj):
     """
-    Converts a log object to an event log
+    Converts a log_skeleton object to an event log_skeleton
 
     Parameters
     -------------
@@ -9,8 +9,8 @@ def convert_to_event_log(obj):
 
     Returns
     -------------
-    log
-        Event log object
+    log_skeleton
+        Event log_skeleton object
     """
     from pm4py.objects.conversion.log import converter
     log = converter.apply(obj, variant=converter.Variants.TO_EVENT_LOG)
@@ -19,7 +19,7 @@ def convert_to_event_log(obj):
 
 def convert_to_event_stream(obj):
     """
-    Converts a log object to an event stream
+    Converts a log_skeleton object to an event stream
 
     Parameters
     --------------
@@ -38,7 +38,7 @@ def convert_to_event_stream(obj):
 
 def convert_to_dataframe(obj):
     """
-    Converts a log object to a dataframe
+    Converts a log_skeleton object to a dataframe
 
     Parameters
     --------------

@@ -36,12 +36,12 @@ def parse_attribute(elem, store, key, value, tree):
 class StreamingEventXesReader:
     def __init__(self, path, parameters=None):
         """
-        Initialize the iterable log object
+        Initialize the iterable log_skeleton object
 
         Parameters
         -------------
         path
-            Path to the XES log
+            Path to the XES log_skeleton
         """
         if parameters is None:
             parameters = {}
@@ -59,7 +59,7 @@ class StreamingEventXesReader:
 
     def __next__(self):
         """
-        Gets the next element of the log
+        Gets the next element of the log_skeleton
         """
         event = self.read_event()
         if self.reading_log:
@@ -68,7 +68,7 @@ class StreamingEventXesReader:
 
     def to_event_stream(self, event_stream):
         """
-        Sends the content of a XES log to an event stream
+        Sends the content of a XES log_skeleton to an event stream
 
         Parameters
         --------------

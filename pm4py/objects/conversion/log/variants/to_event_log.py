@@ -40,11 +40,11 @@ def __transform_event_stream_to_event_log(log, case_glue=Parameters.CASE_ID_KEY.
                                           case_attribute_prefix=Parameters.CASE_ATTRIBUTE_PREFIX.value,
                                           enable_deepcopy=False):
     """
-    Converts the event stream to an event log
+    Converts the event stream to an event log_skeleton
 
     Parameters
     ----------
-    log: :class:`pm4py.log.log.EventLog`
+    log: :class:`pm4py.log_skeleton.log_skeleton.EventLog`
         An event stream
     case_glue:
         Case identifier. Default is 'case:concept:name'
@@ -57,8 +57,8 @@ def __transform_event_stream_to_event_log(log, case_glue=Parameters.CASE_ID_KEY.
 
     Returns
         -------
-    log : :class:`pm4py.log.log.EventLog`
-        An event log
+    log_skeleton : :class:`pm4py.log_skeleton.log_skeleton.EventLog`
+        An event log_skeleton
     """
     if enable_deepcopy:
         log = deepcopy(log)

@@ -13,14 +13,14 @@ def insert_time_from_previous(log, parameters=None):
     Parameters
     -------------
     log
-        Event log
+        Event log_skeleton
     parameters
         Parameters of the algorithm
 
     Returns
     -------------
     enriched_log
-        Enriched log (with the time passed from the previous event)
+        Enriched log_skeleton (with the time passed from the previous event)
     """
     if parameters is None:
         parameters = {}

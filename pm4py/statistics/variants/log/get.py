@@ -8,19 +8,19 @@ import numpy as np
 
 def get_language(log, parameters=None):
     """
-    Gets the stochastic language of the log (from the variants)
+    Gets the stochastic language of the log_skeleton (from the variants)
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     parameters
         Parameters
 
     Returns
     --------------
     dictio
-        Dictionary containing the stochastic language of the log
+        Dictionary containing the stochastic language of the log_skeleton
         (variant associated to a number between 0 and 1; the sum is 1)
     """
     vars = get_variants(log, parameters=parameters)
@@ -39,10 +39,10 @@ def get_variants(log, parameters=None):
     Parameters
     ----------
     log
-        Trace log
+        Trace log_skeleton
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log
+            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log_skeleton
 
     Returns
     ----------
@@ -65,10 +65,10 @@ def get_variants_along_with_case_durations(log, parameters=None):
     Parameters
     ----------
     log
-        Trace log
+        Trace log_skeleton
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log
+            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log_skeleton
 
     Returns
     ----------
@@ -108,7 +108,7 @@ def get_variants_from_log_trace_idx(log, parameters=None):
         Log
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log
+            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log_skeleton
 
     Returns
     ----------
@@ -159,7 +159,7 @@ def convert_variants_trace_idx_to_trace_obj(log, variants_trace_idx):
     Parameters
     -----------
     log
-        Trace log object
+        Trace log_skeleton object
     variants_trace_idx
         Variants associated to a list of belonging indexes
 

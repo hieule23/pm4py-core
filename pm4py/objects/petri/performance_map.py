@@ -406,7 +406,7 @@ def get_transition_performance_with_token_replay(log, net, im, fm):
     Parameters
     -------------
     log
-        Event log
+        Event log_skeleton
     net
         Petri net
     im
@@ -459,7 +459,7 @@ def get_idx_exceeding_specified_acti_performance(log, transition_performance, ac
     Parameters
     ------------
     log
-        Event log
+        Event log_skeleton
     transition_performance
         Dictionary where each transition label is associated to performance measures
     activity
@@ -470,7 +470,7 @@ def get_idx_exceeding_specified_acti_performance(log, transition_performance, ac
     Returns
     ------------
     idx
-        A list of indexes in the log
+        A list of indexes in the log_skeleton
     """
     satisfying_indexes = sorted(list(set(
         x for x, y in transition_performance[activity]["case_association"].items() if max(y) >= lower_bound)))
@@ -484,7 +484,7 @@ def filter_cases_exceeding_specified_acti_performance(log, transition_performanc
     Parameters
     ------------
     log
-        Event log
+        Event log_skeleton
     transition_performance
         Dictionary where each transition label is associated to performance measures
     activity
@@ -495,7 +495,7 @@ def filter_cases_exceeding_specified_acti_performance(log, transition_performanc
     Returns
     ------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     satisfying_indexes = get_idx_exceeding_specified_acti_performance(log, transition_performance, activity,
                                                                       lower_bound)

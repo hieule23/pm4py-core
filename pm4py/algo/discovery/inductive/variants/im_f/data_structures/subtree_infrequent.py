@@ -88,7 +88,7 @@ class SubtreeInfrequent(object):
 
     def __deepcopy__(self, memodict={}):
         """
-            def __init__(self, log, dfg, master_dfg, initial_dfg, activities, counts, rec_depth, noise_threshold=0,
+            def __init__(self, log_skeleton, dfg, master_dfg, initial_dfg, activities, counts, rec_depth, noise_threshold=0,
                  start_activities=None, end_activities=None, initial_start_activities=None,
                  initial_end_activities=None, parameters=None, real_init=False):
         :param memodict:
@@ -139,7 +139,7 @@ class SubtreeInfrequent(object):
             dfg
                 Directly follows graph of this subtree
             log
-                the event log
+                the event log_skeleton
             initial_dfg
                 Referral directly follows graph that should be taken in account adding hidden/loop transitions
             activities
@@ -618,7 +618,7 @@ class SubtreeInfrequent(object):
                                   initial_start_activities=self.initial_start_activities,
                                   initial_end_activities=self.initial_end_activities, parameters=parameters))
         elif empty_traces_present and not enough_traces:
-            # no node is added to the PT, instead we just use recursion on the log without the empty traces
+            # no node is added to the PT, instead we just use recursion on the log_skeleton without the empty traces
             self.detect_cut_if(parameters=parameters)
         else:
             if use_act_once_per_trace:
@@ -646,7 +646,7 @@ class SubtreeInfrequent(object):
                                       noise_threshold=self.noise_threshold,
                                       initial_start_activities=self.initial_start_activities,
                                       initial_end_activities=self.initial_end_activities, parameters=parameters))
-                # continue with the recursion on the new log
+                # continue with the recursion on the new log_skeleton
                 self.children.append(
                     SubtreeInfrequent(new_log, new_dfg, self.master_dfg, self.initial_dfg, activities,
                                       self.counts,
@@ -687,7 +687,7 @@ class SubtreeInfrequent(object):
                                           noise_threshold=self.noise_threshold,
                                           initial_start_activities=self.initial_start_activities,
                                           initial_end_activities=self.initial_end_activities, parameters=parameters))
-                    # continue with the recursion on the new log:
+                    # continue with the recursion on the new log_skeleton:
                     self.children.append(
                         SubtreeInfrequent(new_log, new_dfg, self.master_dfg, self.initial_dfg,
                                           activities,

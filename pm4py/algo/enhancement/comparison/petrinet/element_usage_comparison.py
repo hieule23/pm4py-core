@@ -69,9 +69,9 @@ def compare_element_usage_two_logs(net, im, fm, log1, log2, parameters=None):
     fm
         Final marking
     log1
-        First log
+        First log_skeleton
     log2
-        Second log
+        Second log_skeleton
     parameters
         Parameters of the algorithm (to be passed to the token-based replay)
 

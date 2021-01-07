@@ -20,7 +20,7 @@ POSITION_TRACE = 1
 
 def apply(net, initial_marking, final_marking=None, parameters=None):
     """
-    Do the playout of a Petrinet generating a log (extensive search; stop at the maximum
+    Do the playout of a Petrinet generating a log_skeleton (extensive search; stop at the maximum
     trace length specified
 
     Parameters

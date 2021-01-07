@@ -23,7 +23,7 @@ def apply(log, net, marking, final_marking, parameters=None, variant=None):
     Parameters
     -----------
     log
-        Trace log
+        Trace log_skeleton
     net
         Petri net
     marking

@@ -106,7 +106,7 @@ def apply_numeric_events(log, int1, int2, parameters=None):
     Returns
     --------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -128,23 +128,23 @@ def apply_numeric_events(log, int1, int2, parameters=None):
 
 def apply_events(log, values, parameters=None):
     """
-    Filter log by keeping only events with an attribute value that belongs to the provided values list
+    Filter log_skeleton by keeping only events with an attribute value that belongs to the provided values list
 
     Parameters
     -----------
     log
-        log
+        log_skeleton
     values
         Allowed attributes
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log
+            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log_skeleton
             Parameters.POSITIVE -> Indicate if events should be kept/removed
 
     Returns
     -----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -165,24 +165,24 @@ def apply_events(log, values, parameters=None):
 
 def apply(log, values, parameters=None):
     """
-    Filter log by keeping only traces that has/has not events with an attribute value that belongs to the provided
+    Filter log_skeleton by keeping only traces that has/has not events with an attribute value that belongs to the provided
     values list
 
     Parameters
     -----------
     log
-        Trace log
+        Trace log_skeleton
     values
         Allowed attributes
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log
+            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log_skeleton
             Parameters.POSITIVE -> Indicate if events should be kept/removed
 
     Returns
     -----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -214,12 +214,12 @@ def apply(log, values, parameters=None):
 
 def apply_trace_attribute(log, values, parameters=None):
     """
-    Filter a log on the trace attribute values
+    Filter a log_skeleton on the trace attribute values
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     values
         Allowed/forbidden values
     parameters
@@ -230,7 +230,7 @@ def apply_trace_attribute(log, values, parameters=None):
     Returns
     --------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -252,7 +252,7 @@ def apply_trace_attribute(log, values, parameters=None):
 
 def filter_log_on_max_no_activities(log, max_no_activities=25, parameters=None):
     """
-    Filter a log on a maximum number of activities
+    Filter a log_skeleton on a maximum number of activities
 
     Parameters
     -------------
@@ -266,7 +266,7 @@ def filter_log_on_max_no_activities(log, max_no_activities=25, parameters=None):
     Returns
     -------------
     filtered_log
-        Filtered version of the event log
+        Filtered version of the event log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -300,12 +300,12 @@ def filter_log_by_attributes_threshold(log, attributes, variants, vc, threshold,
     threshold
         Cutting threshold (remove attributes which number of occurrences is below the threshold)
     attribute_key
-        (If specified) Specify the activity key in the log (default concept:name)
+        (If specified) Specify the activity key in the log_skeleton (default concept:name)
 
     Returns
     ----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     filtered_log = EventLog()
     fva = [x[attribute_key] for x in variants[vc[0][0]][0] if attribute_key in x]
@@ -344,7 +344,7 @@ def apply_auto_filter(log, variants=None, parameters=None):
     Returns
     ---------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}

@@ -51,12 +51,12 @@ def __postprocess_stream(list_events):
 
 def apply(log, parameters=None):
     """
-      Converts the event log to an event stream
+      Converts the event log_skeleton to an event stream
 
       Parameters
       ----------
-      log: :class:`pm4py.log.log.EventLog`
-          An Event log
+      log: :class:`pm4py.log_skeleton.log_skeleton.EventLog`
+          An Event log_skeleton
       include_case_attributes:
           Default is True
       case_attribute_prefix:
@@ -66,7 +66,7 @@ def apply(log, parameters=None):
 
       Returns
           -------
-      log : :class:`pm4py.log.log.EventLog`
+      log_skeleton : :class:`pm4py.log_skeleton.log_skeleton.EventLog`
           An Event stream
       """
     if parameters is None:
@@ -109,12 +109,12 @@ def __detect_extensions(df):
 def __transform_event_log_to_event_stream(log, include_case_attributes=True,
                                           case_attribute_prefix=pmutil.CASE_ATTRIBUTE_PREFIX, enable_deepcopy=False):
     """
-      Converts the event log to an event stream
+      Converts the event log_skeleton to an event stream
 
       Parameters
       ----------
-      log: :class:`pm4py.log.log.EventLog`
-          An Event log
+      log: :class:`pm4py.log_skeleton.log_skeleton.EventLog`
+          An Event log_skeleton
       include_case_attributes:
           Default is True
       case_attribute_prefix:
@@ -124,7 +124,7 @@ def __transform_event_log_to_event_stream(log, include_case_attributes=True,
 
       Returns
           -------
-      log : :class:`pm4py.log.log.EventLog`
+      log_skeleton : :class:`pm4py.log_skeleton.log_skeleton.EventLog`
           An Event stream
       """
     events = []
@@ -134,8 +134,8 @@ def __transform_event_log_to_event_stream(log, include_case_attributes=True,
             if include_case_attributes:
                 for key, value in trace.attributes.items():
                     new_event[case_attribute_prefix + key] = value
-            # fix 14/02/2019: since the XES standard does not force to specify a case ID, when event log->event stream
-            # conversion is done, the possibility to get back the original event log is lost
+            # fix 14/02/2019: since the XES standard does not force to specify a case ID, when event log_skeleton->event stream
+            # conversion is done, the possibility to get back the original event log_skeleton is lost
             if pmutil.CASE_ATTRIBUTE_GLUE not in new_event:
                 new_event[pmutil.CASE_ATTRIBUTE_GLUE] = str(hash(trace))
             events.append(new_event)

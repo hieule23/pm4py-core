@@ -30,7 +30,7 @@ class Parameters(Enum):
 
 def apply_from_variants_tree_string(var_list, tree_string, parameters=None):
     """
-    Apply the alignments from the specification of a list of variants in the log.
+    Apply the alignments from the specification of a list of variants in the log_skeleton.
     The tree is specified as a PTML input
 
     Parameters
@@ -60,7 +60,7 @@ def apply_from_variants_tree_string(var_list, tree_string, parameters=None):
 
 def apply_from_variants_list(var_list, tree, parameters=None):
     """
-    Apply the alignments from the specification of a list of variants in the log
+    Apply the alignments from the specification of a list of variants in the log_skeleton
 
     Parameters
     -------------
@@ -106,7 +106,7 @@ def apply(obj: Union[Trace, EventLog], pt: ProcessTree, parameters=None):
     Parameters
     --------------
     obj
-        Event log or trace (a conversion is done if necessary)
+        Event log_skeleton or trace (a conversion is done if necessary)
     pt
         Process tree
     parameters
@@ -134,9 +134,9 @@ def apply(obj: Union[Trace, EventLog], pt: ProcessTree, parameters=None):
 def __align(obj: Union[Trace, EventLog], pt: ProcessTree, max_trace_length: int = 1,
             max_process_tree_height: int = 1, parameters=None):
     """
-    this function approximates alignments for a given event log or trace and a process tree
+    this function approximates alignments for a given event log_skeleton or trace and a process tree
 
-    :param obj: event log or single trace
+    :param obj: event log_skeleton or single trace
     :param pt: process tree
     :param max_trace_length: specifies when the recursive splitting stops based on the trace's length
     :param max_process_tree_height: specifies when the recursive splitting stops based on the tree's height

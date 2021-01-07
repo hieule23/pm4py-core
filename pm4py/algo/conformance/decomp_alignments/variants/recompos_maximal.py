@@ -38,7 +38,7 @@ def apply_from_variants_list_petri_string(var_list, petri_net_string, parameters
 
 def apply_from_variants_list(var_list, petri_net, initial_marking, final_marking, parameters=None):
     """
-    Apply the alignments from the specification of a list of variants in the log
+    Apply the alignments from the specification of a list of variants in the log_skeleton
 
     Parameters
     -------------
@@ -87,12 +87,12 @@ def apply_from_variants_list(var_list, petri_net, initial_marking, final_marking
 def apply(log, net, im, fm, parameters=None):
     """
     Apply the recomposition alignment approach
-    to a log and a Petri net performing decomposition
+    to a log_skeleton and a Petri net performing decomposition
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     net
         Petri net
     im
@@ -121,7 +121,7 @@ def apply(log, net, im, fm, parameters=None):
 def apply_log(log, list_nets, parameters=None):
     """
     Apply the recomposition alignment approach
-    to a log and a decomposed Petri net
+    to a log_skeleton and a decomposed Petri net
 
     Parameters
     --------------

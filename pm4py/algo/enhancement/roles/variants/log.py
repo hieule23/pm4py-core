@@ -16,7 +16,7 @@ class Parameters(Enum):
 def apply(log, parameters=None):
     """
     Gets the roles (group of different activities done by similar resources)
-    out of the log
+    out of the log_skeleton
 
     Parameters
     -------------
@@ -28,7 +28,7 @@ def apply(log, parameters=None):
     Returns
     ------------
     roles
-        List of different roles inside the log
+        List of different roles inside the log_skeleton
     """
     if parameters is None:
         parameters = {}

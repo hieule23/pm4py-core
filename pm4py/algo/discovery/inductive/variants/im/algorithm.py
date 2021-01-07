@@ -20,7 +20,7 @@ import pkgutil
 
 def apply(log, parameters=None):
     """
-    Apply the IM algorithm to a log obtaining a Petri net along with an initial and final marking
+    Apply the IM algorithm to a log_skeleton obtaining a Petri net along with an initial and final marking
 
     Parameters
     -----------
@@ -28,7 +28,7 @@ def apply(log, parameters=None):
         Log
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns
@@ -63,7 +63,7 @@ def apply_variants(variants, parameters=None):
         Variants
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns
@@ -81,7 +81,7 @@ def apply_variants(variants, parameters=None):
 
 def apply_tree(log, parameters=None):
     """
-    Apply the IM algorithm to a log obtaining a process tree
+    Apply the IM algorithm to a log_skeleton obtaining a process tree
 
     Parameters
     ----------
@@ -89,7 +89,7 @@ def apply_tree(log, parameters=None):
         Log
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns
@@ -153,7 +153,7 @@ def apply_tree_variants(variants, parameters=None):
         Variants
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns

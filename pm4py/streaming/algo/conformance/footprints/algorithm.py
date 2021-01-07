@@ -14,7 +14,7 @@ def apply(footprints, variant=Variants.CLASSIC, parameters=None):
     Parameters
     --------------
     footprints
-        Footprints object (calculated from an entire log, from a process tree ...)
+        Footprints object (calculated from an entire log_skeleton, from a process tree ...)
     variant
         Variant of the algorithm. Possible values: Variants.CLASSIC
     parameters

@@ -13,12 +13,12 @@ DEFAULT_VARIANT = Variants.XES_EVENT_STREAM
 
 def apply(path, variant=DEFAULT_VARIANT, parameters=None):
     """
-    Imports a stream from a XES log
+    Imports a stream from a XES log_skeleton
 
     Parameters
     ---------------
     path
-        Path to the XES log
+        Path to the XES log_skeleton
     variant
         Variant of the importer:
          - Variants.XES_EVENT_STREAM

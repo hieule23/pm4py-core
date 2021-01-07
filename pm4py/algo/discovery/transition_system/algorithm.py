@@ -13,7 +13,7 @@ DEFAULT_VARIANT = Variants.VIEW_BASED
 
 def apply(log, parameters=None, variant=DEFAULT_VARIANT):
     """
-    Find transition system given log
+    Find transition system given log_skeleton
 
     Parameters
     -----------

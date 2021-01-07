@@ -72,7 +72,7 @@ def get_activities_color(activities_count):
     Parameters
     -----------
     activities_count
-        Count of attributes in the log
+        Count of attributes in the log_skeleton
 
     Returns
     -----------
@@ -105,7 +105,7 @@ def graphviz_visualization(activities_count, dfg, image_format="png", measure="f
     Parameters
     -----------
     activities_count
-        Count of attributes in the log (may include attributes that are not in the DFG graph)
+        Count of attributes in the log_skeleton (may include attributes that are not in the DFG graph)
     dfg
         DFG graph
     image_format
@@ -115,11 +115,11 @@ def graphviz_visualization(activities_count, dfg, image_format="png", measure="f
     max_no_of_edges_in_diagram
         Maximum number of edges in the diagram allowed for visualization
     start_activities
-        Start activities of the log
+        Start activities of the log_skeleton
     end_activities
-        End activities of the log
+        End activities of the log_skeleton
     soj_time
-        For each activity, the sojourn time in the log
+        For each activity, the sojourn time in the log_skeleton
 
     Returns
     -----------

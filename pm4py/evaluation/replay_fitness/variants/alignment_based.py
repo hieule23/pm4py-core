@@ -12,7 +12,7 @@ def evaluate(aligned_traces, parameters=None):
     Parameters
     ----------
     aligned_traces
-        Alignments calculated for the traces in the log
+        Alignments calculated for the traces in the log_skeleton
     parameters
         Possible parameters of the evaluation
 
@@ -51,7 +51,7 @@ def apply(log, petri_net, initial_marking, final_marking, align_variant=alignmen
     Parameters
     ----------------
     log
-        Event log
+        Event log_skeleton
     petri_net
         Petri net
     initial_marking

@@ -9,12 +9,12 @@ from pm4py.objects.log.log import EventLog, Trace, Event
 
 def equivalence(logs_traces, all_activs, noise_threshold=0):
     """
-    Gets the equivalence relations given the traces of the log
+    Gets the equivalence relations given the traces of the log_skeleton
 
     Parameters
     -------------
     logs_traces
-        Traces of the log
+        Traces of the log_skeleton
     all_activs
         All the activities
     noise_threshold
@@ -23,7 +23,7 @@ def equivalence(logs_traces, all_activs, noise_threshold=0):
     Returns
     --------------
     rel
-        List of relations in the log
+        List of relations in the log_skeleton
     """
     ret0 = Counter()
     for trace in logs_traces:
@@ -37,12 +37,12 @@ def equivalence(logs_traces, all_activs, noise_threshold=0):
 
 def always_after(logs_traces, all_activs, noise_threshold=0):
     """
-    Gets the always-after relations given the traces of the log
+    Gets the always-after relations given the traces of the log_skeleton
 
     Parameters
     -------------
     logs_traces
-        Traces of the log
+        Traces of the log_skeleton
     all_activs
         All the activities
     noise_threshold
@@ -51,7 +51,7 @@ def always_after(logs_traces, all_activs, noise_threshold=0):
     Returns
     --------------
     rel
-        List of relations in the log
+        List of relations in the log_skeleton
     """
     ret0 = Counter()
     for trace in logs_traces:
@@ -65,12 +65,12 @@ def always_after(logs_traces, all_activs, noise_threshold=0):
 
 def always_before(logs_traces, all_activs, noise_threshold=0):
     """
-    Gets the always-before relations given the traces of the log
+    Gets the always-before relations given the traces of the log_skeleton
 
     Parameters
     -------------
     logs_traces
-        Traces of the log
+        Traces of the log_skeleton
     all_activs
         All the activities
     noise_threshold
@@ -79,7 +79,7 @@ def always_before(logs_traces, all_activs, noise_threshold=0):
     Returns
     --------------
     rel
-        List of relations in the log
+        List of relations in the log_skeleton
     """
     ret0 = Counter()
     for trace in logs_traces:
@@ -93,23 +93,23 @@ def always_before(logs_traces, all_activs, noise_threshold=0):
 
 def never_together(logs_traces, all_activs, len_log, noise_threshold=0):
     """
-    Gets the never-together relations given the traces of the log
+    Gets the never-together relations given the traces of the log_skeleton
 
     Parameters
     -------------
     logs_traces
-        Traces of the log
+        Traces of the log_skeleton
     all_activs
         All the activities
     len_log
-        Length of the log
+        Length of the log_skeleton
     noise_threshold
         Noise threshold
 
     Returns
     --------------
     rel
-        List of relations in the log
+        List of relations in the log_skeleton
     """
     all_combos = set((x, y) for x in all_activs for y in all_activs if x != y)
     ret0 = Counter()
@@ -126,12 +126,12 @@ def never_together(logs_traces, all_activs, len_log, noise_threshold=0):
 
 def directly_follows(logs_traces, all_activs, noise_threshold=0):
     """
-    Gets the allowed directly-follows relations given the traces of the log
+    Gets the allowed directly-follows relations given the traces of the log_skeleton
 
     Parameters
     -------------
     logs_traces
-        Traces of the log
+        Traces of the log_skeleton
     all_activs
         All the activities
     noise_threshold
@@ -140,7 +140,7 @@ def directly_follows(logs_traces, all_activs, noise_threshold=0):
     Returns
     --------------
     rel
-        List of relations in the log
+        List of relations in the log_skeleton
     """
     ret0 = Counter()
     for trace in logs_traces:
@@ -154,23 +154,23 @@ def directly_follows(logs_traces, all_activs, noise_threshold=0):
 
 def activ_freq(logs_traces, all_activs, len_log, noise_threshold=0):
     """
-    Gets the allowed activities frequencies given the traces of the log
+    Gets the allowed activities frequencies given the traces of the log_skeleton
 
     Parameters
     -------------
     logs_traces
-        Traces of the log
+        Traces of the log_skeleton
     all_activs
         All the activities
     len_log
-        Length of the log
+        Length of the log_skeleton
     noise_threshold
         Noise threshold
 
     Returns
     --------------
     rel
-        List of relations in the log
+        List of relations in the log_skeleton
     """
     ret0 = {}
     ret = {}
@@ -198,12 +198,12 @@ def activ_freq(logs_traces, all_activs, len_log, noise_threshold=0):
 
 def apply(log, parameters=None):
     """
-    Discover a log skeleton from an event log
+    Discover a log_skeleton skeleton from an event log_skeleton
 
     Parameters
     -------------
     log
-        Event log
+        Event log_skeleton
     parameters
         Parameters of the algorithm, including:
             - the activity key (Parameters.ACTIVITY_KEY)
@@ -237,7 +237,7 @@ def apply(log, parameters=None):
 
 def apply_from_variants_list(var_list, parameters=None):
     """
-    Discovers the log skeleton from the variants list
+    Discovers the log_skeleton skeleton from the variants list
 
     Parameters
     ---------------
@@ -272,7 +272,7 @@ def apply_from_variants_list(var_list, parameters=None):
 
 def prepare_encode(log_skeleton):
     """
-    Prepares the log skeleton for encoding
+    Prepares the log_skeleton skeleton for encoding
 
     Parameters
     --------------

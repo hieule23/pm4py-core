@@ -17,7 +17,7 @@ def get_variants_count(df, parameters=None):
     Returns
     --------------
     variants_set
-        Dictionary of variants in the log
+        Dictionary of variants in the log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -43,7 +43,7 @@ def get_variants_set(df, parameters=None):
     Returns
     --------------
     variants_set
-        Set of variants in the log
+        Set of variants in the log_skeleton
     """
     if parameters is None:
         parameters = {}

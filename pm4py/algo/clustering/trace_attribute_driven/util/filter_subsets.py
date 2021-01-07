@@ -12,24 +12,24 @@ from pm4py.algo.clustering.trace_attribute_driven.parameters import Parameters
 
 def apply_trace_attributes(log, list_of_values, parameters=None):
     """
-    Filter log by keeping only traces that has/has not certain case attribute value that belongs to the provided
+    Filter log_skeleton by keeping only traces that has/has not certain case attribute value that belongs to the provided
     values list
 
     Parameters
     -----------
     log
-        Trace log
+        Trace log_skeleton
     values
         Allowed attribute values(if it's numerical value, [] is needed to make it a list)
     parameters
         Parameters of the algorithm, including:
-            activity_key -> Attribute identifying the case in the log
+            activity_key -> Attribute identifying the case in the log_skeleton
             positive -> Indicate if events should be kept/removed
 
     Returns
     -----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -194,7 +194,7 @@ def logslice_percent_act(log, unit):
 
 def apply_variants_filter(log, admitted_variants, parameters=None):
     """
-    Filter log keeping/removing only provided variants
+    Filter log_skeleton keeping/removing only provided variants
 
     Parameters
     -----------
@@ -204,7 +204,7 @@ def apply_variants_filter(log, admitted_variants, parameters=None):
         Admitted variants
     parameters
         Parameters of the algorithm, including:
-            activity_key -> Attribute identifying the activity in the log
+            activity_key -> Attribute identifying the activity in the log_skeleton
             positive -> Indicate if events should be kept/removed
     """
 
@@ -222,7 +222,7 @@ def apply_variants_filter(log, admitted_variants, parameters=None):
 
 def logslice_percent(log, unit):
     '''
-    slice the log per unit percent
+    slice the log_skeleton per unit percent
     :param log:
     :param unit:
     :return:

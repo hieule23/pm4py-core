@@ -28,17 +28,17 @@ def apply(filename, parameters=None):
 
 def count_traces(filename):
     """
-    Efficiently count the number of traces of a XES event log
+    Efficiently count the number of traces of a XES event log_skeleton
 
     Parameters
     -------------
     filename
-        Path to the XES log
+        Path to the XES log_skeleton
 
     Returns
     -------------
     num_traces
-        Number of traces of the XES log
+        Number of traces of the XES log_skeleton
     """
     from lxml import etree
 
@@ -59,7 +59,7 @@ def count_traces(filename):
 
 def import_log(filename, parameters=None):
     """
-    Imports an XES file into a log object
+    Imports an XES file into a log_skeleton object
 
     Parameters
     ----------
@@ -67,15 +67,15 @@ def import_log(filename, parameters=None):
         Absolute filename
     parameters
         Parameters of the algorithm, including
-            Parameters.TIMESTAMP_SORT -> Specify if we should sort log by timestamp
-            Parameters.TIMESTAMP_KEY -> If sort is enabled, then sort the log by using this key
-            Parameters.REVERSE_SORT -> Specify in which direction the log should be sorted
-            Parameters.MAX_TRACES -> Specify the maximum number of traces to import from the log (read in order in the XML file)
+            Parameters.TIMESTAMP_SORT -> Specify if we should sort log_skeleton by timestamp
+            Parameters.TIMESTAMP_KEY -> If sort is enabled, then sort the log_skeleton by using this key
+            Parameters.REVERSE_SORT -> Specify in which direction the log_skeleton should be sorted
+            Parameters.MAX_TRACES -> Specify the maximum number of traces to import from the log_skeleton (read in order in the XML file)
 
     Returns
     -------
-    log : :class:`pm4py.log.log.EventLog`
-        A log
+    log_skeleton : :class:`pm4py.log_skeleton.log_skeleton.EventLog`
+        A log_skeleton
     """
     from lxml import etree
 
@@ -99,7 +99,7 @@ def import_log(filename, parameters=None):
     progress = None
     if pkgutil.find_loader("tqdm"):
         from tqdm.auto import tqdm
-        progress = tqdm(total=no_trace, desc="parsing log, completed traces :: ")
+        progress = tqdm(total=no_trace, desc="parsing log_skeleton, completed traces :: ")
 
     log = None
     trace = None
@@ -186,7 +186,7 @@ def import_log(filename, parameters=None):
 
             elif elem.tag.endswith(xes_constants.TAG_EXTENSION):
                 if log is None:
-                    raise SyntaxError('extension found outside of <log> tag')
+                    raise SyntaxError('extension found outside of <log_skeleton> tag')
                 if elem.get(xes_constants.KEY_NAME) is not None and elem.get(
                         xes_constants.KEY_PREFIX) is not None and elem.get(xes_constants.KEY_URI) is not None:
                     log.extensions[elem.get(xes_constants.KEY_NAME)] = {
@@ -196,7 +196,7 @@ def import_log(filename, parameters=None):
 
             elif elem.tag.endswith(xes_constants.TAG_GLOBAL):
                 if log is None:
-                    raise SyntaxError('global found outside of <log> tag')
+                    raise SyntaxError('global found outside of <log_skeleton> tag')
                 if elem.get(xes_constants.KEY_SCOPE) is not None:
                     log.omni_present[elem.get(xes_constants.KEY_SCOPE)] = {}
                     tree[elem] = log.omni_present[elem.get(xes_constants.KEY_SCOPE)]
@@ -204,7 +204,7 @@ def import_log(filename, parameters=None):
 
             elif elem.tag.endswith(xes_constants.TAG_CLASSIFIER):
                 if log is None:
-                    raise SyntaxError('classifier found outside of <log> tag')
+                    raise SyntaxError('classifier found outside of <log_skeleton> tag')
                 if elem.get(xes_constants.KEY_KEYS) is not None:
                     classifier_value = elem.get(xes_constants.KEY_KEYS)
                     if "'" in classifier_value:
@@ -216,7 +216,7 @@ def import_log(filename, parameters=None):
 
             elif elem.tag.endswith(xes_constants.TAG_LOG):
                 if log is not None:
-                    raise SyntaxError('file contains > 1 <log> tags')
+                    raise SyntaxError('file contains > 1 <log_skeleton> tags')
                 log = EventLog()
                 tree[elem] = log.attributes
                 continue

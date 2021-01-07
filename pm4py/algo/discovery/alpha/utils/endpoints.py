@@ -1,6 +1,6 @@
 def derive_end_activities_from_log(log, activity_key):
     """
-    Derive end activities from log
+    Derive end activities from log_skeleton
 
     Parameters
     -----------
@@ -24,7 +24,7 @@ def derive_end_activities_from_log(log, activity_key):
 
 def derive_start_activities_from_log(log, activity_key):
     """
-    Derive start activities from log
+    Derive start activities from log_skeleton
 
     Parameters
     -----------

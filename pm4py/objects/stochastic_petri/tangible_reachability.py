@@ -4,12 +4,12 @@ from pm4py.objects.conversion.log import converter as log_converter
 
 def get_tangible_reachability_from_log_net_im_fm(log, net, im, fm, parameters=None):
     """
-    Gets the tangible reachability graph from a log and an accepting Petri net
+    Gets the tangible reachability graph from a log_skeleton and an accepting Petri net
 
     Parameters
     ---------------
     log
-        Event log
+        Event log_skeleton
     net
         Petri net
     im

@@ -357,7 +357,7 @@ def apply_trace(trace, net, initial_marking, final_marking, trans_map, enable_pl
     Parameters
     ----------
     trace
-        Trace in the event log
+        Trace in the event log_skeleton
     net
         Petri net
     initial_marking
@@ -745,7 +745,7 @@ class ApplyTraceTokenReplay:
             Current dictionary of transitions associated with unfit traces
         notexisting_activities_in_model
             Map that stores the notexisting activities in the model
-            triggered in the log
+            triggered in the log_skeleton
         places_shortest_path_by_hidden
             Shortest paths between places by hidden transitions
         consider_remaining_in_fitness
@@ -882,12 +882,12 @@ def get_variant_from_trace(trace, activity_key, disable_variants=False):
 
 def get_variants_from_log(log, activity_key, disable_variants=False):
     """
-    Gets the variants from the log (allow disabling by giving each trace a different variant)
+    Gets the variants from the log_skeleton (allow disabling by giving each trace a different variant)
 
     Parameters
     -------------
     log
-        Trace log
+        Trace log_skeleton
     activity_key
         Attribute that is the activity
     disable_variants
@@ -896,7 +896,7 @@ def get_variants_from_log(log, activity_key, disable_variants=False):
     Returns
     -------------
     variants
-        Variants contained in the log
+        Variants contained in the log_skeleton
     """
     if disable_variants:
         variants = {}
@@ -914,12 +914,12 @@ def apply_log(log, net, initial_marking, final_marking, enable_pltr_fitness=Fals
               variants=None, is_reduction=False, thread_maximum_ex_time=TechnicalParameters.MAX_DEF_THR_EX_TIME.value,
               cleaning_token_flood=False, disable_variants=False, return_object_names=False):
     """
-    Apply token-based replay to a log
+    Apply token-based replay to a log_skeleton
 
     Parameters
     ----------
     log
-        Trace log
+        Trace log_skeleton
     net
         Petri net
     initial_marking
@@ -941,7 +941,7 @@ def apply_log(log, net, initial_marking, final_marking, enable_pltr_fitness=Fals
     places_shortest_path_by_hidden
         Shortest paths between places by hidden transitions
     variants
-        List of variants contained in the event log
+        List of variants contained in the event log_skeleton
     is_reduction
         Expresses if the token-based replay is called in a reduction attempt
     thread_maximum_ex_time
@@ -1164,7 +1164,7 @@ def get_diagnostics_dataframe(log, tbr_output, parameters=None):
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     tbr_output
         Output of the token-based replay technique
 

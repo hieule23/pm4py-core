@@ -23,13 +23,13 @@ VERSIONS = {ALIGNMENT_BASED, TOKEN_BASED}
 
 def apply(log, petri_net, initial_marking, final_marking, parameters=None, variant=None):
     """
-    Apply fitness evaluation starting from an event log and a marked Petri net,
+    Apply fitness evaluation starting from an event log_skeleton and a marked Petri net,
     by using one of the replay techniques provided by PM4Py
 
     Parameters
     -----------
     log
-        Trace log object
+        Trace log_skeleton object
     petri_net
         Petri net
     initial_marking

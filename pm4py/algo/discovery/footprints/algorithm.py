@@ -22,12 +22,12 @@ class Variants(Enum):
 
 def apply(*args, variant=None, parameters=None):
     """
-    Discovers a footprint object from a log/model
+    Discovers a footprint object from a log_skeleton/model
 
     Parameters
     --------------
     args
-        Positional arguments that describe the log/model
+        Positional arguments that describe the log_skeleton/model
     parameters
         Parameters of the algorithm
     variant

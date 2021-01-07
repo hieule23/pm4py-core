@@ -26,8 +26,8 @@ def apply(tree, parameters=None):
 
     Returns
     ---------------
-    log
-        Event log
+    log_skeleton
+        Event log_skeleton
     """
     if parameters is None:
         parameters = {}

@@ -65,7 +65,7 @@ def resolve_lp_get_dfg(PS_matrix, duration_matrix, activities, activities_counte
     duration_matrix
         Duration matrix
     activities
-        List of activities of the log
+        List of activities of the log_skeleton
     activities_counter
         Counter of the activities
 
@@ -90,7 +90,7 @@ def get_PS_dur_matrix(activities_grouped, activities, parameters=None):
     activities_grouped
         Grouped activities
     activities
-        List of activities of the log
+        List of activities of the log_skeleton
     parameters
         Parameters of the algorithm
 
@@ -119,14 +119,14 @@ def get_PS_dur_matrix(activities_grouped, activities, parameters=None):
 
 def preprocess_log(log, activities=None, parameters=None):
     """
-    Preprocess a log to enable correlation mining
+    Preprocess a log_skeleton to enable correlation mining
 
     Parameters
     --------------
     log
         Log object
     activities
-        (if provided) list of activities of the log
+        (if provided) list of activities of the log_skeleton
     parameters
         Parameters of the algorithm
 
@@ -137,7 +137,7 @@ def preprocess_log(log, activities=None, parameters=None):
     activities_grouped
         Grouped activities
     activities
-        List of activities of the log
+        List of activities of the log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -176,7 +176,7 @@ def get_precede_succeed_matrix(activities, activities_grouped, timestamp_key, st
     Parameters
     ---------------
     activities
-        Ordered list of activities of the log
+        Ordered list of activities of the log_skeleton
     activities_grouped
         Grouped list of activities
     timestamp_key
@@ -219,7 +219,7 @@ def get_duration_matrix(activities, activities_grouped, timestamp_key, start_tim
     Parameters
     ---------------
     activities
-        Ordered list of activities of the log
+        Ordered list of activities of the log_skeleton
     activities_grouped
         Grouped list of activities
     timestamp_key

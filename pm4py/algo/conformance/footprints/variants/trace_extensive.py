@@ -19,13 +19,13 @@ class ConfOutputs(Enum):
 
 def apply(log_footprints, model_footprints, parameters=None):
     """
-    Apply footprints conformance between a log footprints object
+    Apply footprints conformance between a log_skeleton footprints object
     and a model footprints object
 
     Parameters
     -----------------
     log_footprints
-        Footprints of the log (trace-by-trace)
+        Footprints of the log_skeleton (trace-by-trace)
     model_footprints
         Footprints of the model
     parameters
@@ -41,7 +41,7 @@ def apply(log_footprints, model_footprints, parameters=None):
 
     if not type(log_footprints) is list:
         raise Exception(
-            "it is possible to apply this variant only on trace-by-trace footprints, not overall log footprints!")
+            "it is possible to apply this variant only on trace-by-trace footprints, not overall log_skeleton footprints!")
 
     enable_act_always_executed = exec_utils.get_param_value(Parameters.ENABLE_ACT_ALWAYS_EXECUTED, parameters, True)
     model_configurations = model_footprints[Outputs.SEQUENCE.value].union(model_footprints[Outputs.PARALLEL.value])
@@ -77,14 +77,14 @@ def apply(log_footprints, model_footprints, parameters=None):
 
 def get_diagnostics_dataframe(log, conf_result, parameters=None):
     """
-    Gets the diagnostics dataframe from the log
+    Gets the diagnostics dataframe from the log_skeleton
     and the results of footprints conformance checking
     (trace-by-trace)
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     conf_result
         Conformance checking results (trace-by-trace)
 

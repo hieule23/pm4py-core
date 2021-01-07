@@ -31,7 +31,7 @@ VERSIONS = {DFG_NATIVE, DFG_FREQUENCY, DFG_PERFORMANCE, DFG_FREQUENCY_GREEDY, DF
 
 def apply(log, parameters=None, variant=DEFAULT_VARIANT):
     """
-    Calculates DFG graph (frequency or performance) starting from a log
+    Calculates DFG graph (frequency or performance) starting from a log_skeleton
 
     Parameters
     ----------

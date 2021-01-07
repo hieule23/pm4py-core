@@ -9,7 +9,7 @@ from pm4py.util import exec_utils
 
 def apply(log, list_activities, sample_size, parameters):
     """
-    Finds the performance spectrum provided a log
+    Finds the performance spectrum provided a log_skeleton
     and a list of activities
 
     Parameters

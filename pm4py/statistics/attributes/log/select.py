@@ -6,7 +6,7 @@ DEFAULT_MAX_CASES_FOR_ATTR_SELECTION = 50
 def select_attributes_from_log_for_tree(log, max_cases_for_attr_selection=DEFAULT_MAX_CASES_FOR_ATTR_SELECTION,
                                         max_diff_occ=DEFAULT_MAX_CASES_FOR_ATTR_SELECTION / 4):
     """
-    Select attributes from log for tree
+    Select attributes from log_skeleton for tree
 
     Parameters
     ------------
@@ -65,7 +65,7 @@ def select_attributes_from_log_for_tree(log, max_cases_for_attr_selection=DEFAUL
 
 def check_trace_attributes_presence(log, attributes_set):
     """
-    Check trace attributes presence in all the traces of the log
+    Check trace attributes presence in all the traces of the log_skeleton
 
     Parameters
     ------------
@@ -88,7 +88,7 @@ def check_trace_attributes_presence(log, attributes_set):
 
 def check_event_attributes_presence(log, attributes_set):
     """
-    Check event attributes presence in all the traces of the log
+    Check event attributes presence in all the traces of the log_skeleton
 
     Parameters
     ------------

@@ -16,7 +16,7 @@ def apply(fp1, fp2, parameters=None):
     Parameters
     ---------------
     fp1
-        Footprints associated to the log (NOT a list)
+        Footprints associated to the log_skeleton (NOT a list)
     fp2
         Footprints associated to the model
     parameters

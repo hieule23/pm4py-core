@@ -78,7 +78,7 @@ def apply_standard_cost_function_to_alignment(align: List) -> int:
                 # visible model move
                 res += 1
             elif move[0] != SKIP and move[1] == SKIP:
-                # log move
+                # log_skeleton move
                 res += 1
     return res
 

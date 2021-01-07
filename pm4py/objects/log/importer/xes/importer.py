@@ -20,7 +20,7 @@ else:
 
 def __import_log_from_string(log_string, parameters=None, variant=DEFAULT_VARIANT):
     """
-    Imports a log from a string
+    Imports a log_skeleton from a string
 
     Parameters
     -----------
@@ -28,11 +28,11 @@ def __import_log_from_string(log_string, parameters=None, variant=DEFAULT_VARIAN
         String that contains the XES
     parameters
         Parameters of the algorithm, including
-            Parameters.TIMESTAMP_SORT -> Specify if we should sort log by timestamp
-            Parameters.TIMESTAMP_KEY -> If sort is enabled, then sort the log by using this key
-            Parameters.REVERSE_SORT -> Specify in which direction the log should be sorted
+            Parameters.TIMESTAMP_SORT -> Specify if we should sort log_skeleton by timestamp
+            Parameters.TIMESTAMP_KEY -> If sort is enabled, then sort the log_skeleton by using this key
+            Parameters.REVERSE_SORT -> Specify in which direction the log_skeleton should be sorted
             Parameters.INSERT_TRACE_INDICES -> Specify if trace indexes should be added as event attribute for each event
-            Parameters.MAX_TRACES -> Specify the maximum number of traces to import from the log (read in order in the XML file)
+            Parameters.MAX_TRACES -> Specify the maximum number of traces to import from the log_skeleton (read in order in the XML file)
     variant
         Variant of the algorithm to use, including:
             - Variants.ITERPARSE
@@ -40,8 +40,8 @@ def __import_log_from_string(log_string, parameters=None, variant=DEFAULT_VARIAN
 
     Returns
     -----------
-    log
-        Trace log object
+    log_skeleton
+        Trace log_skeleton object
     """
 
     temp_file = string_to_file.import_string_to_temp_file(log_string, "xes")
@@ -50,7 +50,7 @@ def __import_log_from_string(log_string, parameters=None, variant=DEFAULT_VARIAN
 
 def apply(path, parameters=None, variant=DEFAULT_VARIANT):
     """
-    Import a XES log into a EventLog object
+    Import a XES log_skeleton into a EventLog object
 
     Parameters
     -----------
@@ -58,11 +58,11 @@ def apply(path, parameters=None, variant=DEFAULT_VARIANT):
         Log path
     parameters
         Parameters of the algorithm, including
-            Parameters.TIMESTAMP_SORT -> Specify if we should sort log by timestamp
-            Parameters.TIMESTAMP_KEY -> If sort is enabled, then sort the log by using this key
-            Parameters.REVERSE_SORT -> Specify in which direction the log should be sorted
+            Parameters.TIMESTAMP_SORT -> Specify if we should sort log_skeleton by timestamp
+            Parameters.TIMESTAMP_KEY -> If sort is enabled, then sort the log_skeleton by using this key
+            Parameters.REVERSE_SORT -> Specify in which direction the log_skeleton should be sorted
             Parameters.INSERT_TRACE_INDICES -> Specify if trace indexes should be added as event attribute for each event
-            Parameters.MAX_TRACES -> Specify the maximum number of traces to import from the log (read in order in the XML file)
+            Parameters.MAX_TRACES -> Specify the maximum number of traces to import from the log_skeleton (read in order in the XML file)
     variant
         Variant of the algorithm to use, including:
             - Variants.ITERPARSE
@@ -70,8 +70,8 @@ def apply(path, parameters=None, variant=DEFAULT_VARIANT):
 
     Returns
     -----------
-    log
-        Trace log object
+    log_skeleton
+        Trace log_skeleton object
     """
     # supporting .xes.gz file types
     if path.endswith("gz"):

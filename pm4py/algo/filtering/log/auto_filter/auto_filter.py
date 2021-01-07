@@ -23,7 +23,7 @@ class Parameters(Enum):
 
 def apply_auto_filter(log, parameters=None):
     """
-    Apply some filters in battery to the log in order to get a simplified log
+    Apply some filters in battery to the log_skeleton in order to get a simplified log_skeleton
     
     Parameters
     ----------
@@ -37,7 +37,7 @@ def apply_auto_filter(log, parameters=None):
     Returns
     ---------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
 
     # the following filters are applied:

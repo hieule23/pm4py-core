@@ -41,7 +41,7 @@ def get_variant_statistics(log, parameters=None):
         Log
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log
+            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log_skeleton
             Parameters.MAX_VARIANTS_TO_RETURN -> Maximum number of variants to return
             Parameters.VARIANT -> If provided, avoid recalculation of the variants
 
@@ -74,7 +74,7 @@ def get_variant_statistics(log, parameters=None):
 
 def get_cases_description(log, parameters=None):
     """
-    Get a description of traces present in the log
+    Get a description of traces present in the log_skeleton
 
     Parameters
     -----------
@@ -146,7 +146,7 @@ def get_cases_description(log, parameters=None):
 
 def index_log_caseid(log, parameters=None):
     """
-    Index a log according to case ID
+    Index a log_skeleton according to case ID
 
     Parameters
     -----------
@@ -188,7 +188,7 @@ def get_events(log, case_id, parameters=None):
     parameters
         Possible parameters of the algorithm, including:
             Parameters.CASE_ID_KEY -> Trace attribute in which the case ID is contained
-            Parameters.INDEXED_LOG -> Indexed log (if it has been calculated previously)
+            Parameters.INDEXED_LOG -> Indexed log_skeleton (if it has been calculated previously)
 
     Returns
     ----------
@@ -209,7 +209,7 @@ def get_events(log, case_id, parameters=None):
 
 def get_all_casedurations(log, parameters=None):
     """
-    Gets all the case durations out of the log
+    Gets all the case durations out of the log_skeleton
 
     Parameters
     ------------
@@ -231,7 +231,7 @@ def get_all_casedurations(log, parameters=None):
 
 def get_first_quartile_caseduration(log, parameters=None):
     """
-    Gets the first quartile out of the log
+    Gets the first quartile out of the log_skeleton
 
     Parameters
     -------------
@@ -256,7 +256,7 @@ def get_first_quartile_caseduration(log, parameters=None):
 
 def get_median_caseduration(log, parameters=None):
     """
-    Gets the median case duration out of the log
+    Gets the median case duration out of the log_skeleton
 
     Parameters
     -------------
@@ -281,7 +281,7 @@ def get_median_caseduration(log, parameters=None):
 
 def get_kde_caseduration(log, parameters=None):
     """
-    Gets the estimation of KDE density for the case durations calculated on the log
+    Gets the estimation of KDE density for the case durations calculated on the log_skeleton
 
     Parameters
     --------------
@@ -304,7 +304,7 @@ def get_kde_caseduration(log, parameters=None):
 
 def get_kde_caseduration_json(log, parameters=None):
     """
-    Gets the estimation of KDE density for the case durations calculated on the log
+    Gets the estimation of KDE density for the case durations calculated on the log_skeleton
     (expressed as JSON)
 
     Parameters

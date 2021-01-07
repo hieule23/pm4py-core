@@ -16,12 +16,12 @@ PARAM_KEY_END_ACTIVITIES = Parameters.END_ACTIVITIES
 
 def apply(dfg, parameters=None):
     """
-    Applies the DFG mining on a given object (if it is a Pandas dataframe or a log, the DFG is calculated)
+    Applies the DFG mining on a given object (if it is a Pandas dataframe or a log_skeleton, the DFG is calculated)
 
     Parameters
     -------------
     dfg
-        Object (DFG) (if it is a Pandas dataframe or a log, the DFG is calculated)
+        Object (DFG) (if it is a Pandas dataframe or a log_skeleton, the DFG is calculated)
     parameters
         Parameters
     """

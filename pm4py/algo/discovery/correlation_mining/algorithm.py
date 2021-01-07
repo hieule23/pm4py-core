@@ -14,7 +14,7 @@ DEFAULT_VARIANT = Variants.CLASSIC
 
 def apply(log, variant=DEFAULT_VARIANT, parameters=None):
     """
-    Applies the Correlation Miner to the event stream (a log is converted to a stream)
+    Applies the Correlation Miner to the event stream (a log_skeleton is converted to a stream)
 
     The approach is described in:
     Pourmirza, Shaya, Remco Dijkman, and Paul Grefen. "Correlation miner: mining business process models and event

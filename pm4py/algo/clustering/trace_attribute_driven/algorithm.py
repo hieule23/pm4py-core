@@ -44,7 +44,7 @@ def bfs(tree):
 
 def apply(log, trace_attribute, variant=VARIANT_DMM_LEVEN, parameters=None):
     """
-    Apply the hierarchical clustering to a log starting from a trace attribute.
+    Apply the hierarchical clustering to a log_skeleton starting from a trace attribute.
 
     MSc Thesis is available at: https://www.pads.rwth-aachen.de/global/show_document.asp?id=aaaaaaaaalpxgft&download=1
     Defense slides are available at: https://www.pads.rwth-aachen.de/global/show_document.asp?id=aaaaaaaaalpxgqx&download=1

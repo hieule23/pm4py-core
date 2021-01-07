@@ -5,7 +5,7 @@ from pm4py.util import constants as pm4_constants
 
 def apply(df, parameters=None):
     """
-    Convert a dataframe into a log containing 1 case per variant (only control-flow
+    Convert a dataframe into a log_skeleton containing 1 case per variant (only control-flow
     perspective is considered)
 
     Parameters
@@ -17,8 +17,8 @@ def apply(df, parameters=None):
 
     Returns
     -------------
-    log
-        Event log
+    log_skeleton
+        Event log_skeleton
     """
     from pm4py.statistics.traces.pandas import case_statistics
 

@@ -14,7 +14,7 @@ def show_nice_log(old_log):
 
 
 def empty_trace(l):
-    # checks if there are empty traces in the log, if so, creates new_log without those empty traces
+    # checks if there are empty traces in the log_skeleton, if so, creates new_log without those empty traces
     contains_empty_trace = False
     for trace in l:
         if len(trace) == 0:
@@ -31,7 +31,7 @@ def empty_trace(l):
 
 
 def filter_activity_from_log(l, act, activity_key):
-    # remove the activity from every trace in the log
+    # remove the activity from every trace in the log_skeleton
     # as trace doesnt have remove function, we just create new traces without chosen_activity
     act_str = str(act)
     new_log = log.EventLog()
@@ -165,7 +165,7 @@ def activity_concurrent(self, l, activities, activity_key, parameters=None):
                     small_log.append(empty_trace)
             logging_output = "activity concurrent: " + str(key)
             logging.debug(logging_output)
-            return True, test_log, small_log, key  # if so, return new log
+            return True, test_log, small_log, key  # if so, return new log_skeleton
 
     return False, test_log, small_log, key  # if,  after iterating through all act's still no cut is found, return false
 

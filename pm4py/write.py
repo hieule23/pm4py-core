@@ -5,12 +5,12 @@ from pm4py import VERSION
 
 def write_xes(log, file_path):
     """
-    Exports a XES log
+    Exports a XES log_skeleton
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     file_path
         Destination path
 
@@ -27,12 +27,12 @@ def write_xes(log, file_path):
                         details="Use pandas to export CSV files")
 def write_csv(log, file_path):
     """
-    Exports a CSV log
+    Exports a CSV log_skeleton
 
     Parameters
     ---------------
     log
-        Event log
+        Event log_skeleton
     file_path
         Destination path
 

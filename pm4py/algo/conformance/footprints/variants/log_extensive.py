@@ -12,13 +12,13 @@ class ConfOutputs(Enum):
 
 def apply(log_footprints, model_footprints, parameters=None):
     """
-    Apply footprints conformance between a log footprints object
+    Apply footprints conformance between a log_skeleton footprints object
     and a model footprints object
 
     Parameters
     -----------------
     log_footprints
-        Footprints of the log (entire log)
+        Footprints of the log_skeleton (entire log_skeleton)
     model_footprints
         Footprints of the model
     parameters
@@ -34,7 +34,7 @@ def apply(log_footprints, model_footprints, parameters=None):
 
     if type(log_footprints) is list:
         raise Exception(
-            "it is possible to apply this variant only on overall log footprints, not trace-by-trace footprints!")
+            "it is possible to apply this variant only on overall log_skeleton footprints, not trace-by-trace footprints!")
 
     log_configurations = log_footprints[Outputs.SEQUENCE.value].union(log_footprints[Outputs.PARALLEL.value])
     model_configurations = model_footprints[Outputs.SEQUENCE.value].union(model_footprints[Outputs.PARALLEL.value])

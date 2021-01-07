@@ -27,7 +27,7 @@ def __fetch_param_value(param, params):
 
 def import_log(filename, parameters=None):
     """
-    Import a log object from a XML file
+    Import a log_skeleton object from a XML file
     containing the traces, the events and the simple attributes of them
 
     Parameters
@@ -36,10 +36,10 @@ def import_log(filename, parameters=None):
         XES file to parse
     parameters
         Parameters of the algorithm, including
-            Parameters.TIMESTAMP_SORT -> Specify if we should sort log by timestamp
-            Parameters.TIMESTAMP_KEY -> If sort is enabled, then sort the log by using this key
-            Parameters.REVERSE_SORT -> Specify in which direction the log should be sorted
-            Parameters.MAX_TRACES -> Specify the maximum number of traces to import from the log (read in order in the XML file)
+            Parameters.TIMESTAMP_SORT -> Specify if we should sort log_skeleton by timestamp
+            Parameters.TIMESTAMP_KEY -> If sort is enabled, then sort the log_skeleton by using this key
+            Parameters.REVERSE_SORT -> Specify in which direction the log_skeleton should be sorted
+            Parameters.MAX_TRACES -> Specify the maximum number of traces to import from the log_skeleton (read in order in the XML file)
             Parameters.MAX_BYTES -> Maximum number of bytes to read
             Parameters.SKYP_BYTES -> Number of bytes to skip
 

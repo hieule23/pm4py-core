@@ -17,19 +17,19 @@ class Parameters(Enum):
 
 def preprocessing(log, parameters=None):
     """
-    Preprocessing step for the Aplha+ algorithm. Removing all transitions from the log with a loop of length one.
+    Preprocessing step for the Aplha+ algorithm. Removing all transitions from the log_skeleton with a loop of length one.
 
     Parameters
     ------------
     log
-        Event log
+        Event log_skeleton
     parameters
         Parameters of the algorithm
 
     Returns
     -------------
-    log
-        filtered log and a list of the filtered transitions
+    log_skeleton
+        filtered log_skeleton and a list of the filtered transitions
     loop_one_list
         Loop one list
     A_filtered
@@ -122,7 +122,7 @@ def get_relations(log):
     Parameters
     --------------
     log
-        Filtered log
+        Filtered log_skeleton
 
     Returns
     --------------
@@ -269,7 +269,7 @@ def processing(log, causal, follows):
     Parameters
     -------------
     log
-        Filtered log
+        Filtered log_skeleton
     causal
         Pairs that have a causal relation (->)
     follows
@@ -408,7 +408,7 @@ def postprocessing(net, initial_marking, final_marking, A, B, pairs, loop_one_li
     loop_list
         List of looped activities
     classical_alpha_result
-        Result after applying the classic alpha algorithm to the filtered log
+        Result after applying the classic alpha algorithm to the filtered log_skeleton
     A
         See Paper for definition
     B
@@ -447,7 +447,7 @@ def postprocessing(net, initial_marking, final_marking, A, B, pairs, loop_one_li
 
 def apply(trace_log, parameters=None):
     """
-    Apply the Alpha Algorithm to a given log
+    Apply the Alpha Algorithm to a given log_skeleton
 
     Parameters
     ------------
@@ -468,7 +468,7 @@ def apply(trace_log, parameters=None):
     if parameters is None:
         parameters = {}
 
-    # deep copy the log object because otherwise the original log would be modified with
+    # deep copy the log_skeleton object because otherwise the original log_skeleton would be modified with
     # artificial start/end activities
     trace_log = deepcopy(trace_log)
 

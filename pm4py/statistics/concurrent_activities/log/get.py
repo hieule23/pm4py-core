@@ -13,12 +13,12 @@ class Parameters(Enum):
 
 def apply(interval_log, parameters=None):
     """
-    Gets the number of times for which two activities have been concurrent in the log
+    Gets the number of times for which two activities have been concurrent in the log_skeleton
 
     Parameters
     --------------
     interval_log
-        Interval event log
+        Interval event log_skeleton
     parameters
         Parameters of the algorithm, including:
         - Parameters.ACTIVITY_KEY => activity key
@@ -29,7 +29,7 @@ def apply(interval_log, parameters=None):
     --------------
     ret_dict
         Dictionaries associating to a couple of activities (tuple) the number of times for which they have been
-        executed in parallel in the log
+        executed in parallel in the log_skeleton
     """
     if parameters is None:
         parameters = {}

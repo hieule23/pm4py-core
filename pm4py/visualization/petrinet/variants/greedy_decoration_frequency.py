@@ -47,7 +47,7 @@ def get_decorated_net(net, initial_marking, final_marking, log, parameters=None,
         dfg = log_retrieval.native(log, parameters=parameters)
     # we find shortest paths
     spaths = get_shortest_paths(net)
-    # we find the number of activities occurrences in the log
+    # we find the number of activities occurrences in the log_skeleton
     activities_count = attr_get.get_attribute_values(log, activity_key, parameters=parameters)
     aggregated_statistics = get_decorations_from_dfg_spaths_acticount(net, dfg, spaths,
                                                                       activities_count,

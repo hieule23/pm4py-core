@@ -52,7 +52,7 @@ def get_repr(spec_tree_struct, rec_depth, contains_empty_traces=False):
     rec_depth
         Current recursion depth
     contains_empty_traces
-        Boolean value that is True if the event log from which the DFG has been extracted contains empty traces
+        Boolean value that is True if the event log_skeleton from which the DFG has been extracted contains empty traces
 
     Returns
     -----------
@@ -112,7 +112,7 @@ def get_repr(spec_tree_struct, rec_depth, contains_empty_traces=False):
 
 
     if spec_tree_struct.detected_cut in base_cases:
-        # in the base case of an empty log, we only return a silent transition
+        # in the base case of an empty log_skeleton, we only return a silent transition
         if spec_tree_struct.detected_cut == "empty_log":
             return ProcessTree(operator=None, label=None)
         # in the base case of a single activity, we return a tree consisting of the single activity

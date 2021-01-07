@@ -11,7 +11,7 @@ class Parameters(Enum):
 
 def filter_on_case_performance(log, inf_perf, sup_perf, parameters=None):
     """
-    Gets a filtered log keeping only traces that satisfy the given performance requirements
+    Gets a filtered log_skeleton keeping only traces that satisfy the given performance requirements
 
     Parameters
     ------------
@@ -27,7 +27,7 @@ def filter_on_case_performance(log, inf_perf, sup_perf, parameters=None):
     Returns
     -----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -38,19 +38,19 @@ def filter_on_case_performance(log, inf_perf, sup_perf, parameters=None):
 
 def filter_on_ncases(log, max_no_cases=1000):
     """
-    Get only a specified number of traces from a log
+    Get only a specified number of traces from a log_skeleton
 
     Parameters
     -----------
     log
         Log
     max_no_cases
-        Desidered number of traces from the log
+        Desidered number of traces from the log_skeleton
 
     Returns
     -----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     filtered_log = EventLog(log[:min(len(log), max_no_cases)])
     return filtered_log
@@ -58,7 +58,7 @@ def filter_on_ncases(log, max_no_cases=1000):
 
 def filter_on_case_size(log, min_case_size=2, max_case_size=None):
     """
-    Get only traces in the log with a given size
+    Get only traces in the log_skeleton with a given size
 
     Parameters
     -----------
@@ -72,7 +72,7 @@ def filter_on_case_size(log, min_case_size=2, max_case_size=None):
     Returns
     -----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if max_case_size is not None:
         filtered_log = EventLog([trace for trace in log if min_case_size <= len(trace) <= max_case_size])

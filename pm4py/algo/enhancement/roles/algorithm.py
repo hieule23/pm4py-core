@@ -12,7 +12,7 @@ class Variants(Enum):
 def apply(log, variant=None, parameters=None):
     """
     Gets the roles (group of different activities done by similar resources)
-    out of the log.
+    out of the log_skeleton.
 
     The roles detection is introduced by
     Burattin, Andrea, Alessandro Sperduti, and Marco Veluscek. "Business models enhancement through discovery of roles." 2013 IEEE Symposium on Computational Intelligence and Data Mining (CIDM). IEEE, 2013.
@@ -32,7 +32,7 @@ def apply(log, variant=None, parameters=None):
     Returns
     ------------
     roles
-        List of different roles inside the log, including:
+        List of different roles inside the log_skeleton, including:
         roles_threshold_parameter => threshold to use with the algorithm
     """
     if parameters is None:

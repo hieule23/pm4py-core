@@ -14,7 +14,7 @@ def get_string_trace_attribute_rep(trace, trace_attribute):
     Parameters
     ------------
     trace
-        Trace of the log
+        Trace of the log_skeleton
     trace_attribute
         Attribute of the trace to consider
 
@@ -30,12 +30,12 @@ def get_string_trace_attribute_rep(trace, trace_attribute):
 
 def get_all_string_trace_attribute_values(log, trace_attribute):
     """
-    Get all string trace attribute values representations for a log
+    Get all string trace attribute values representations for a log_skeleton
 
     Parameters
     ------------
     log
-        Trace log
+        Trace log_skeleton
     trace_attribute
         Attribute of the trace to consider
 
@@ -76,7 +76,7 @@ def get_values_event_attribute_for_trace(trace, event_attribute):
     Parameters
     -------------
     trace
-        Trace of the log
+        Trace of the log_skeleton
     event_attribute
         Event attribute to consider
 
@@ -96,19 +96,19 @@ def get_values_event_attribute_for_trace(trace, event_attribute):
 
 def get_all_string_event_attribute_values(log, event_attribute):
     """
-    Get all the representations for all the traces of the log associated to a string event attribute values
+    Get all the representations for all the traces of the log_skeleton associated to a string event attribute values
 
     Parameters
     ------------
     log
-        Trace of the log
+        Trace of the log_skeleton
     event_attribute
         Event attribute to consider
 
     Returns
     ------------
     values
-        All feature names present for the given attribute in the given log
+        All feature names present for the given attribute in the given log_skeleton
     """
     values = set()
     for trace in log:
@@ -145,7 +145,7 @@ def get_values_event_attribute_succession_for_trace(trace, event_attribute):
     Parameters
     -------------
     trace
-        Trace of the log
+        Trace of the log_skeleton
     event_attribute
         Event attribute to consider
 
@@ -167,19 +167,19 @@ def get_values_event_attribute_succession_for_trace(trace, event_attribute):
 
 def get_all_string_event_succession_attribute_values(log, event_attribute):
     """
-    Get all the representations for all the traces of the log associated to a string event attribute succession values
+    Get all the representations for all the traces of the log_skeleton associated to a string event attribute succession values
 
     Parameters
     ------------
     log
-        Trace of the log
+        Trace of the log_skeleton
     event_attribute
         Event attribute to consider
 
     Returns
     ------------
     values
-        All feature names present for the given attribute succession in the given log
+        All feature names present for the given attribute succession in the given log_skeleton
     """
     values = set()
     for trace in log:
@@ -211,7 +211,7 @@ def get_numeric_trace_attribute_value(trace, trace_attribute):
     Parameters
     ------------
     trace
-        Trace of the log
+        Trace of the log_skeleton
 
     Returns
     ------------
@@ -266,7 +266,7 @@ def get_numeric_event_attribute_value_trace(trace, event_attribute):
     Parameters
     -------------
     trace
-        Trace of the log
+        Trace of the log_skeleton
 
     Returns
     -------------
@@ -285,17 +285,17 @@ def get_numeric_event_attribute_value_trace(trace, event_attribute):
 
 def get_default_representation_with_attribute_names(log, parameters=None, feature_names=None):
     """
-    Gets the default data representation of an event log (for process tree building)
+    Gets the default data representation of an event log_skeleton (for process tree building)
     returning also the attribute names
 
     Parameters
     -------------
     log
-        Trace log
+        Trace log_skeleton
     parameters
         Possible parameters of the algorithm
     feature_names
-        (If provided) Feature to use in the representation of the log
+        (If provided) Feature to use in the representation of the log_skeleton
 
     Returns
     -------------
@@ -341,16 +341,16 @@ def get_default_representation_with_attribute_names(log, parameters=None, featur
 
 def get_default_representation(log, parameters=None, feature_names=None):
     """
-    Gets the default data representation of an event log (for process tree building)
+    Gets the default data representation of an event log_skeleton (for process tree building)
 
     Parameters
     -------------
     log
-        Trace log
+        Trace log_skeleton
     parameters
         Possible parameters of the algorithm
     feature_names
-        (If provided) Feature to use in the representation of the log
+        (If provided) Feature to use in the representation of the log_skeleton
 
     Returns
     -------------
@@ -394,14 +394,14 @@ def get_default_representation(log, parameters=None, feature_names=None):
 def get_representation(log, str_tr_attr, str_ev_attr, num_tr_attr, num_ev_attr, str_evsucc_attr=None,
                        feature_names=None):
     """
-    Get a representation of the event log that is suited for the data part of the decision tree learning
+    Get a representation of the event log_skeleton that is suited for the data part of the decision tree learning
 
     NOTE: this function only encodes the last value seen for each attribute
 
     Parameters
     -------------
     log
-        Trace log
+        Trace log_skeleton
     str_tr_attr
         List of string trace attributes to consider in data vector creation
     str_ev_attr
@@ -413,7 +413,7 @@ def get_representation(log, str_tr_attr, str_ev_attr, num_tr_attr, num_ev_attr, 
     str_evsucc_attr
         List of attributes succession of values to consider in data vector creation
     feature_names
-        (If provided) Feature to use in the representation of the log
+        (If provided) Feature to use in the representation of the log_skeleton
 
     Returns
     -------------

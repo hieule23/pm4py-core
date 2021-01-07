@@ -13,23 +13,23 @@ class Parameters(Enum):
 
 def filter_log_events_attr(log, values, parameters=None):
     """
-    Filter log by keeping only events with an attribute value that belongs to the provided values list
+    Filter log_skeleton by keeping only events with an attribute value that belongs to the provided values list
 
     Parameters
     -----------
     log
-        log
+        log_skeleton
     values
         Allowed attributes
     parameters
         Parameters of the algorithm, including:
-            activity_key -> Attribute identifying the activity in the log
+            activity_key -> Attribute identifying the activity in the log_skeleton
             positive -> Indicate if events should be kept/removed
 
     Returns
     -----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
 
     # CODE SAVING FROM FILTERS
@@ -53,24 +53,24 @@ def filter_log_events_attr(log, values, parameters=None):
 
 def filter_log_traces_attr(log, values, parameters=None):
     """
-    Filter log by keeping only traces that has/has not events with an attribute value that belongs to the provided
+    Filter log_skeleton by keeping only traces that has/has not events with an attribute value that belongs to the provided
     values list
 
     Parameters
     -----------
     log
-        Trace log
+        Trace log_skeleton
     values
         Allowed attributes
     parameters
         Parameters of the algorithm, including:
-            activity_key -> Attribute identifying the activity in the log
+            activity_key -> Attribute identifying the activity in the log_skeleton
             positive -> Indicate if events should be kept/removed
 
     Returns
     -----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
 
     # CODE SAVING FROM FILTERS

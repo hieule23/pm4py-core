@@ -5,7 +5,7 @@ def split_xor(cut, l, activity_key):
     new_logs = []
     for c in cut:  # for cut partition
         lo = log.EventLog()
-        for i in range(0, len(l)):  # for trace in log
+        for i in range(0, len(l)):  # for trace in log_skeleton
             fits = True
             for j in range(0, len(l[i])):  # for event in trace
                 if l[i][j][activity_key] not in c:
@@ -35,7 +35,7 @@ def split_sequence(cut, l, activity_key):
     new_logs = []
     for c in cut:  # for all cut-partitions
         lo = log.EventLog()
-        for trace in l:  # for all traces in the log
+        for trace in l:  # for all traces in the log_skeleton
             not_in_c = True
             trace_new = log.Trace()
             for j in range(0, len(trace)):  # for every event in the current trace

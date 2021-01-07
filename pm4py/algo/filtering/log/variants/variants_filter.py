@@ -16,7 +16,7 @@ class Parameters(Enum):
 
 def apply(log, admitted_variants, parameters=None):
     """
-    Filter log keeping/removing only provided variants
+    Filter log_skeleton keeping/removing only provided variants
 
     Parameters
     -----------
@@ -26,7 +26,7 @@ def apply(log, admitted_variants, parameters=None):
         Admitted variants
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log
+            Parameters.ACTIVITY_KEY -> Attribute identifying the activity in the log_skeleton
             Parameters.POSITIVE -> Indicate if events should be kept/removed
     """
 
@@ -44,12 +44,12 @@ def apply(log, admitted_variants, parameters=None):
 
 def filter_log_variants_percentage(log, percentage=0.8, parameters=None):
     """
-    Filters a log by variants percentage
+    Filters a log_skeleton by variants percentage
 
     Parameters
     -------------
     log
-        Event log
+        Event log_skeleton
     percentage
         Percentage
     parameters
@@ -58,7 +58,7 @@ def filter_log_variants_percentage(log, percentage=0.8, parameters=None):
     Returns
     -------------
     filtered_log
-        Filtered log (by variants percentage)
+        Filtered log_skeleton (by variants percentage)
     """
     if parameters is None:
         parameters = {}
@@ -70,7 +70,7 @@ def filter_log_variants_percentage(log, percentage=0.8, parameters=None):
 
 def filter_variants_variants_percentage(log, variants, variants_percentage=0.0):
     """
-    Filter the log by variants percentage
+    Filter the log_skeleton by variants percentage
 
     Parameters
     ----------
@@ -84,7 +84,7 @@ def filter_variants_variants_percentage(log, variants, variants_percentage=0.0):
     Returns
     ----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     filtered_log = EventLog()
     no_of_traces = len(log)
@@ -125,7 +125,7 @@ def find_auto_threshold(log, variants, decreasing_factor):
     Returns
     ----------
     variantsPercentage
-        Percentage of variants to keep in the log
+        Percentage of variants to keep in the log_skeleton
     """
     no_of_traces = len(log)
     variant_count = get_variants_sorted_by_count(variants)
@@ -156,7 +156,7 @@ def apply_auto_filter(log, variants=None, parameters=None):
     log
         Log
     variants
-        Variants contained in the log
+        Variants contained in the log_skeleton
     parameters
         Parameters of the algorithm, including:
             Parameters.ACTIVITY_KEY -> Key that identifies the activity
@@ -166,7 +166,7 @@ def apply_auto_filter(log, variants=None, parameters=None):
     Returns
     ----------
     filteredLog
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}

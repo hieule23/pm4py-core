@@ -20,7 +20,7 @@ def apply(*args, variant=None, parameters=None):
     args
         Arguments:
         - A single footprint table
-        - Two footprints table (first one associated to the log, second
+        - Two footprints table (first one associated to the log_skeleton, second
         one associated to the model)
     parameters
         Parameters of the algorithm, including:

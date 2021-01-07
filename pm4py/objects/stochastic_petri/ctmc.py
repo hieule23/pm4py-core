@@ -123,12 +123,12 @@ def get_tangible_reachability_and_q_matrix_from_dfg_performance(dfg_performance,
 
 def get_tangible_reachability_and_q_matrix_from_log_net(log, net, im, fm, parameters=None):
     """
-    Gets the tangible reachability graph from a log and an accepting Petri net
+    Gets the tangible reachability graph from a log_skeleton and an accepting Petri net
 
     Parameters
     ---------------
     log
-        Event log
+        Event log_skeleton
     net
         Petri net
     im
@@ -162,8 +162,8 @@ def transient_analysis_from_petri_net_and_smap(net, im, s_map, delay, parameters
 
     Parameters
     -------------
-    log
-        Event log
+    log_skeleton
+        Event log_skeleton
     delay
         Time delay
     parameters

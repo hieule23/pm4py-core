@@ -36,12 +36,12 @@ def parse_attribute(elem, store, key, value, tree):
 class StreamingTraceXesReader:
     def __init__(self, path, parameters=None):
         """
-        Initialize the iterable log object
+        Initialize the iterable log_skeleton object
 
         Parameters
         -------------
         path
-            Path to the XES log
+            Path to the XES log_skeleton
         """
         if parameters is None:
             parameters = {}
@@ -59,7 +59,7 @@ class StreamingTraceXesReader:
 
     def __next__(self):
         """
-        Gets the next element of the log
+        Gets the next element of the log_skeleton
         """
         trace = self.read_trace()
         if self.reading_log:
@@ -68,7 +68,7 @@ class StreamingTraceXesReader:
 
     def to_trace_stream(self, trace_stream):
         """
-        Sends the content of a XES log to a trace stream
+        Sends the content of a XES log_skeleton to a trace stream
 
         Parameters
         --------------

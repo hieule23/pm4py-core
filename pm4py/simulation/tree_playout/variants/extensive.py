@@ -233,14 +233,14 @@ def apply(tree, parameters=None):
         - Parameters.MAX_LIMIT_NUM_TRACES => maximum number to the limit of traces; the playout shall stop when the number is reached (default: sys.maxsize)
     Returns
     -------------
-    log
-        Event log
+    log_skeleton
+        Event log_skeleton
     """
     if parameters is None:
         parameters = {}
 
     activity_key = exec_utils.get_param_value(Parameters.ACTIVITY_KEY, parameters, xes_constants.DEFAULT_NAME_KEY)
-    # to save memory in the returned log, allocate each activity once. to know the list of activities of the
+    # to save memory in the returned log_skeleton, allocate each activity once. to know the list of activities of the
     # process tree, use the footprints module
     fp_tree = fp_discovery.apply(tree, parameters=parameters)
     activities = fp_tree["activities"]

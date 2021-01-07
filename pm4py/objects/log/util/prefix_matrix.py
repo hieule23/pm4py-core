@@ -15,22 +15,22 @@ SKIP_LAST = "skip_last"
 def get_variants_matrix_from_variants_list(variants_list, activities, parameters=None):
     """
     Gets a numeric matrix where each row is associated to a different set of activities
-    happening in the (complete) variants of the log, along with the count of the particular
+    happening in the (complete) variants of the log_skeleton, along with the count of the particular
     situation
 
     Parameters
     -------------
     variants_list
-        List of variants contained in the log, along with their count
+        List of variants contained in the log_skeleton, along with their count
     activities
-        List of activities in the log
+        List of activities in the log_skeleton
     parameters
         Parameters of the algorithm: keep_unique (default: True)
 
     Returns
     -------------
     variants_matrix
-        Variants matrix of the log
+        Variants matrix of the log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -76,21 +76,21 @@ def get_prefix_repr(prefix, activities):
 def get_prefix_matrix_from_variants_list(variants_list, activities, parameters=None):
     """
     Gets a numeric matrix where each row is associated to a different prefix of activities
-    happening in the variants of the log, along with the count of the particular situation
+    happening in the variants of the log_skeleton, along with the count of the particular situation
 
     Parameters
     -------------
     variants_list
-        List of variants contained in the log, along with their count
+        List of variants contained in the log_skeleton, along with their count
     activities
-        List of activities in the log
+        List of activities in the log_skeleton
     parameters
         Parameters of the algorithm
 
     Returns
     -------------
     prefix_mat
-        Prefix matrix of the log
+        Prefix matrix of the log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -128,7 +128,7 @@ def get_prefix_matrix_from_trace(trace, activities, parameters=None):
     Parameters
     --------------
     trace
-        Trace of the event log
+        Trace of the event log_skeleton
     activities
         Activities
     parameters
@@ -137,7 +137,7 @@ def get_prefix_matrix_from_trace(trace, activities, parameters=None):
     Returns
     --------------
     prefix_mat
-        Prefix matrix of the log
+        Prefix matrix of the log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -174,7 +174,7 @@ def get_prefix_matrix_from_var_str(var_str, activities, parameters=None):
     Returns
     --------------
     prefix_mat
-        Prefix matrix of the log
+        Prefix matrix of the log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -200,7 +200,7 @@ def get_prefix_matrix_from_event_log_not_unique(event_log, activities, parameter
     Parameters
     --------------
     event_log
-        Event log
+        Event log_skeleton
     activities
         Activities
     parameters
@@ -209,7 +209,7 @@ def get_prefix_matrix_from_event_log_not_unique(event_log, activities, parameter
     Returns
     --------------
     prefix_mat
-        Prefix matrix of the log
+        Prefix matrix of the log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -232,7 +232,7 @@ def get_prefix_matrix_from_event_log_not_unique(event_log, activities, parameter
 
 def get_variants_list(log, parameters=None):
     """
-    Gets the list of variants (along with their count) from the particular log type
+    Gets the list of variants (along with their count) from the particular log_skeleton type
 
     Parameters
     ------------
@@ -244,7 +244,7 @@ def get_variants_list(log, parameters=None):
     Returns
     -------------
     variants_list
-        List of variants of the log (along with their count)
+        List of variants of the log_skeleton (along with their count)
     """
     from pm4py.statistics.traces.pandas import case_statistics as pd_case_statistics
     from pm4py.statistics.traces.log import case_statistics as log_case_statistics
@@ -267,7 +267,7 @@ def get_variants_list(log, parameters=None):
 
 def get_activities_list(log, parameters=None):
     """
-    Gets the activities list from a log object, sorted by activity name
+    Gets the activities list from a log_skeleton object, sorted by activity name
 
     Parameters
     --------------
@@ -297,7 +297,7 @@ def get_activities_list(log, parameters=None):
 
 def get_prefix_matrix(log, parameters=None):
     """
-    Gets the prefix matrix from a log object
+    Gets the prefix matrix from a log_skeleton object
 
     Parameters
     --------------
@@ -311,7 +311,7 @@ def get_prefix_matrix(log, parameters=None):
     prefix_matrix
         Prefix matrix
     activities
-        Sorted (by name) activities of the log
+        Sorted (by name) activities of the log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -339,7 +339,7 @@ def get_prefix_matrix(log, parameters=None):
 
 def get_variants_matrix(log, parameters=None):
     """
-    Gets the variants matrix from a log object
+    Gets the variants matrix from a log_skeleton object
 
     Parameters
     -------------
@@ -353,7 +353,7 @@ def get_variants_matrix(log, parameters=None):
     variants_matrix
         Variants matrix
     activities
-        Sorted (by name) activities of the log
+        Sorted (by name) activities of the log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -372,7 +372,7 @@ def get_variants_matrix(log, parameters=None):
 
 def get_prefix_variants_matrix(log, parameters=None):
     """
-    Gets the prefix variants matrix from a log object
+    Gets the prefix variants matrix from a log_skeleton object
 
     Parameters
     -------------
@@ -388,7 +388,7 @@ def get_prefix_variants_matrix(log, parameters=None):
     variants_matrix
         Variants matrix
     activities
-        Sorted (by name) activities of the log
+        Sorted (by name) activities of the log_skeleton
     """
     if parameters is None:
         parameters = {}

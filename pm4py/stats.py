@@ -3,7 +3,7 @@ from pm4py.util.pandas_utils import check_is_dataframe, check_dataframe_columns
 
 def get_start_activities(log):
     """
-    Returns the start activities from a log object
+    Returns the start activities from a log_skeleton object
 
     Parameters
     ---------------
@@ -26,7 +26,7 @@ def get_start_activities(log):
 
 def get_end_activities(log):
     """
-    Returns the end activities of a log
+    Returns the end activities of a log_skeleton
 
     Parameters
     ---------------
@@ -49,7 +49,7 @@ def get_end_activities(log):
 
 def get_attributes(log):
     """
-    Returns the attributes at the event level of the log
+    Returns the attributes at the event level of the log_skeleton
 
     Parameters
     ---------------
@@ -59,7 +59,7 @@ def get_attributes(log):
     Returns
     ---------------
     attributes_list
-        List of attributes contained in the log
+        List of attributes contained in the log_skeleton
     """
     if check_is_dataframe(log):
         check_dataframe_columns(log)
@@ -71,7 +71,7 @@ def get_attributes(log):
 
 def get_trace_attributes(log):
     """
-    Gets the attributes at the trace level of a log object
+    Gets the attributes at the trace level of a log_skeleton object
 
     Parameters
     ----------------
@@ -119,12 +119,12 @@ def get_attribute_values(log, attribute):
 
 def get_variants(log):
     """
-    Gets the variants from the log
+    Gets the variants from the log_skeleton
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
 
     Returns
     --------------

@@ -10,7 +10,7 @@ def get_class_representation_by_str_ev_attr_value_presence(log, str_attr_name, s
     Parameters
     -------------
     log
-        Trace log
+        Trace log_skeleton
     str_attr_name
         Attribute name to consider
     str_attr_value
@@ -51,7 +51,7 @@ def get_class_representation_by_str_ev_attr_value_value(log, str_attr_name):
     Parameters
     ------------
     log
-        Trace log
+        Trace log_skeleton
     str_attr_name
         Attribute name to consider
 
@@ -90,7 +90,7 @@ def get_class_representation_by_trace_duration(log, target_trace_duration, times
     Parameters
     ------------
     log
-        Trace log
+        Trace log_skeleton
     target_trace_duration
         Target trace duration
     timestamp_key

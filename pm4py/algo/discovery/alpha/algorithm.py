@@ -23,7 +23,7 @@ VERSIONS = {Variants.ALPHA_VERSION_CLASSIC, Variants.ALPHA_VERSION_PLUS}
 
 def apply(log, parameters=None, variant=DEFAULT_VARIANT):
     """
-    Apply the Alpha Miner on top of a log
+    Apply the Alpha Miner on top of a log_skeleton
 
     Parameters
     -----------

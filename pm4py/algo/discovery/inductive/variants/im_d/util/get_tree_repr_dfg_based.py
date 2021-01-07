@@ -50,7 +50,7 @@ def get_repr(spec_tree_struct, rec_depth, contains_empty_traces=False):
     rec_depth
         Current recursion depth
     contains_empty_traces
-        Boolean value that is True if the event log from which the DFG has been extracted contains empty traces
+        Boolean value that is True if the event log_skeleton from which the DFG has been extracted contains empty traces
 
     Returns
     -----------

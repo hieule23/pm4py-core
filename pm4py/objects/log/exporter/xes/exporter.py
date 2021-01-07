@@ -11,12 +11,12 @@ class Variants(Enum):
 
 def __export_log_as_string(log, variant=Variants.ETREE, parameters=None):
     """
-    Method to export a XES from a log as a string
+    Method to export a XES from a log_skeleton as a string
 
     Parameters
     -----------
     log
-        Trace log
+        Trace log_skeleton
     variant
         Selected variant of the algorithm
     parameters
@@ -34,12 +34,12 @@ def __export_log_as_string(log, variant=Variants.ETREE, parameters=None):
 
 def __export_log(log, output_file_path, variant=Variants.ETREE, parameters=None):
     """
-    Method to export a XES from a log
+    Method to export a XES from a log_skeleton
 
     Parameters
     -----------
     log
-        Trace log
+        Trace log_skeleton
     output_file_path
         Output file path
     variant
@@ -55,12 +55,12 @@ def __export_log(log, output_file_path, variant=Variants.ETREE, parameters=None)
 
 def apply(log, output_file_path, variant=Variants.ETREE, parameters=None):
     """
-    Method to export a XES from a log
+    Method to export a XES from a log_skeleton
 
     Parameters
     -----------
     log
-        Trace log
+        Trace log_skeleton
     output_file_path
         Output file path
     variant

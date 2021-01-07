@@ -2,7 +2,7 @@
 This module contains code that allows us to compute alignments on the basis of a regular A* search on the state-space
 of the synchronous product net of a trace and a Petri net.
 The main algorithm follows [1]_.
-When running the log-based variant, the code is running in parallel on a trace based level.
+When running the log_skeleton-based variant, the code is running in parallel on a trace based level.
 Furthermore, by default, the code applies heuristic estimation, and prefers those states that have the smallest h-value
 in case the f-value of two states is equal.
 
@@ -216,7 +216,7 @@ def apply_from_variants_dictionary(var_dictio, petri_net, initial_marking, final
 
 def apply_from_variants_list(var_list, petri_net, initial_marking, final_marking, parameters=None):
     """
-    Apply the alignments from the specification of a list of variants in the log
+    Apply the alignments from the specification of a list of variants in the log_skeleton
 
     Parameters
     -------------
@@ -255,7 +255,7 @@ def apply_from_variants_list(var_list, petri_net, initial_marking, final_marking
 
 def apply_from_variants_list_petri_string(var_list, petri_net_string, parameters=None):
     """
-    Apply the alignments from the specification of a list of variants in the log
+    Apply the alignments from the specification of a list of variants in the log_skeleton
 
     Parameters
     -------------
@@ -282,7 +282,7 @@ def apply_from_variants_list_petri_string(var_list, petri_net_string, parameters
 
 def apply_from_variants_list_petri_string_mprocessing(mp_output, var_list, petri_net_string, parameters=None):
     """
-    Apply the alignments from the specification of a list of variants in the log
+    Apply the alignments from the specification of a list of variants in the log_skeleton
 
     Parameters
     -------------

@@ -16,7 +16,7 @@ on Business Process Management. Springer, Berlin, Heidelberg, 2010.
 
 for measuring precision.
 
-For each prefix in the log, the reflected tasks are calculated (outgoing attributes from the prefix)
+For each prefix in the log_skeleton, the reflected tasks are calculated (outgoing attributes from the prefix)
 Then, a token replay is done on the prefix in order to get activated transitions
 Escaping edges is the set difference between activated transitions and reflected tasks
 
@@ -34,7 +34,7 @@ def apply(log, net, marking, final_marking, parameters=None):
     Parameters
     ----------
     log
-        Trace log
+        Trace log_skeleton
     net
         Petri net
     marking

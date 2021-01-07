@@ -87,12 +87,12 @@ def __search(sync_net, ini, fin, stop, cost_function, skip):
 
 def get_log_prefixes(log, activity_key=xes_util.DEFAULT_NAME_KEY):
     """
-    Get log prefixes
+    Get log_skeleton prefixes
 
     Parameters
     ----------
     log
-        Trace log
+        Trace log_skeleton
     activity_key
         Activity key (must be provided if different from concept:name)
     """
@@ -112,12 +112,12 @@ def get_log_prefixes(log, activity_key=xes_util.DEFAULT_NAME_KEY):
 
 def form_fake_log(prefixes_keys, activity_key=xes_util.DEFAULT_NAME_KEY):
     """
-    Form fake log for replay (putting each prefix as separate trace to align)
+    Form fake log_skeleton for replay (putting each prefix as separate trace to align)
 
     Parameters
     ----------
     prefixes_keys
-        Keys of the prefixes (to form a log with a given order)
+        Keys of the prefixes (to form a log_skeleton with a given order)
     activity_key
         Activity key (must be provided if different from concept:name)
     """

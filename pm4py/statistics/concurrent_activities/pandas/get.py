@@ -13,7 +13,7 @@ class Parameters(Enum):
 
 def apply(dataframe, parameters=None):
     """
-    Gets the number of times for which two activities have been concurrent in the log
+    Gets the number of times for which two activities have been concurrent in the log_skeleton
 
     Parameters
     --------------
@@ -30,7 +30,7 @@ def apply(dataframe, parameters=None):
     --------------
     ret_dict
         Dictionaries associating to a couple of activities (tuple) the number of times for which they have been
-        executed in parallel in the log
+        executed in parallel in the log_skeleton
     """
     if parameters is None:
         parameters = {}

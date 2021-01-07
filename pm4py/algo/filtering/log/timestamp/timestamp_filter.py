@@ -44,7 +44,7 @@ def filter_traces_contained(log, dt1, dt2, parameters=None):
     Parameters
     -----------
     log
-        Trace log
+        Trace log_skeleton
     dt1
         Lower bound to the interval
     dt2
@@ -56,7 +56,7 @@ def filter_traces_contained(log, dt1, dt2, parameters=None):
     Returns
     ------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -105,7 +105,7 @@ def filter_traces_intersecting(log, dt1, dt2, parameters=None):
     Parameters
     -----------
     log
-        Trace log
+        Trace log_skeleton
     dt1
         Lower bound to the interval
     dt2
@@ -117,7 +117,7 @@ def filter_traces_intersecting(log, dt1, dt2, parameters=None):
     Returns
     ------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -131,7 +131,7 @@ def filter_traces_intersecting(log, dt1, dt2, parameters=None):
 
 def apply_events(log, dt1, dt2, parameters=None):
     """
-    Get a new log containing all the events contained in the given interval
+    Get a new log_skeleton containing all the events contained in the given interval
 
     Parameters
     -----------
@@ -148,7 +148,7 @@ def apply_events(log, dt1, dt2, parameters=None):
     Returns
     ------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}

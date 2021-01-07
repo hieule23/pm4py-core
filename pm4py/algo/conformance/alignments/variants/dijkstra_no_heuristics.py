@@ -172,7 +172,7 @@ def apply_from_variants_dictionary(var_dictio, petri_net, initial_marking, final
 
 def apply_from_variants_list(var_list, petri_net, initial_marking, final_marking, parameters=None):
     """
-    Apply the alignments from the specification of a list of variants in the log
+    Apply the alignments from the specification of a list of variants in the log_skeleton
 
     Parameters
     -------------

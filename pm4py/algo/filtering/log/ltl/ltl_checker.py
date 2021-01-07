@@ -56,7 +56,7 @@ def A_eventually_B(log, A, B, parameters=None):
     Returns
     ------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -123,7 +123,7 @@ def A_eventually_B_eventually_C(log, A, B, C, parameters=None):
     Returns
     ------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -196,7 +196,7 @@ def A_eventually_B_eventually_C_eventually_D(log, A, B, C, D, parameters=None):
     Returns
     ------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -275,7 +275,7 @@ def A_next_B_next_C(log, A, B, C, parameters=None):
     Returns
     ------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -332,7 +332,7 @@ def four_eyes_principle(log, A, B, parameters=None):
     Returns
     --------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -381,7 +381,7 @@ def attr_value_different_persons(log, A, parameters=None):
     Returns
     -------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}

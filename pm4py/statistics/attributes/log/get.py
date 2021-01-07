@@ -9,7 +9,7 @@ from pm4py.util import exec_utils
 
 def get_all_trace_attributes_from_log(log):
     """
-    Get all trace attributes from the log
+    Get all trace attributes from the log_skeleton
 
     Parameters
     ------------
@@ -19,7 +19,7 @@ def get_all_trace_attributes_from_log(log):
     Returns
     ------------
     all_attributes
-        All trace attributes from the log
+        All trace attributes from the log_skeleton
     """
     all_attributes = set()
     for trace in log:
@@ -31,7 +31,7 @@ def get_all_trace_attributes_from_log(log):
 
 def get_all_event_attributes_from_log(log):
     """
-    Get all events attributes from the log
+    Get all events attributes from the log_skeleton
 
     Parameters
     -------------
@@ -41,7 +41,7 @@ def get_all_event_attributes_from_log(log):
     Returns
     -------------
     all_attributes
-        All trace attributes from the log
+        All trace attributes from the log_skeleton
     """
     all_attributes = set()
     for trace in log:
@@ -54,7 +54,7 @@ def get_all_event_attributes_from_log(log):
 
 def get_attribute_values(log, attribute_key, parameters=None):
     """
-    Get the attribute values of the log for the specified attribute along with their count
+    Get the attribute values of the log_skeleton for the specified attribute along with their count
 
     Parameters
     ----------
@@ -92,7 +92,7 @@ def get_attribute_values(log, attribute_key, parameters=None):
 
 def get_trace_attribute_values(log, attribute_key, parameters=None):
     """
-    Get the attribute values of the log for the specified attribute along with their count
+    Get the attribute values of the log_skeleton for the specified attribute along with their count
 
     Parameters
     ------------
@@ -130,7 +130,7 @@ def get_kde_numeric_attribute(log, attribute, parameters=None):
     Parameters
     -------------
     log
-        Event stream object (if log, is converted)
+        Event stream object (if log_skeleton, is converted)
     attribute
         Numeric attribute to analyse
     parameters
@@ -165,7 +165,7 @@ def get_kde_numeric_attribute_json(log, attribute, parameters=None):
     Parameters
     -------------
     log
-        Event log object (if log, is converted)
+        Event log_skeleton object (if log_skeleton, is converted)
     attribute
         Numeric attribute to analyse
     parameters
@@ -198,7 +198,7 @@ def get_kde_date_attribute(log, attribute=DEFAULT_TIMESTAMP_KEY, parameters=None
     Parameters
     -------------
     log
-        Event stream object (if log, is converted)
+        Event stream object (if log_skeleton, is converted)
     attribute
         Date attribute to analyse
     parameters
@@ -232,7 +232,7 @@ def get_kde_date_attribute_json(log, attribute=DEFAULT_TIMESTAMP_KEY, parameters
     Parameters
     -------------
     log
-        Event stream object (if log, is converted)
+        Event stream object (if log_skeleton, is converted)
     attribute
         Date attribute to analyse
     parameters

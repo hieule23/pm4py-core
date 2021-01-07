@@ -99,7 +99,7 @@ def table_to_stream(table, parameters=None):
 
 def table_to_log(table, parameters=None):
     """
-    Converts a Pyarrow table to an event log
+    Converts a Pyarrow table to an event log_skeleton
 
     Parameters
     ------------
@@ -226,10 +226,10 @@ def automatic_feature_selection_df(df, parameters=None):
         # in any case, keep attributes that appears at least once per case
         if this_cases == no_all_cases:
             if "float" in y or "int" in y:
-                # (as in the classic log version) retain always float/int attributes
+                # (as in the classic log_skeleton version) retain always float/int attributes
                 other_attributes_to_retain.add(x)
             elif "object" in y:
-                # (as in the classic log version) keep string attributes if they have enough variability, but not too much
+                # (as in the classic log_skeleton version) keep string attributes if they have enough variability, but not too much
                 # (that would be hard to explain)
                 unique_val_count = df[x].nunique()
                 if min_different_occ_str_attr <= unique_val_count <= max_different_occ_str_attr:

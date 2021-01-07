@@ -61,7 +61,7 @@ def diagnose_from_notexisting_activities(log, notexisting_activities_in_model, p
     Parameters
     -------------
     log
-        Trace log
+        Trace log_skeleton
     notexisting_activities_in_model
         Not existing activities in the model
     parameters
@@ -114,7 +114,7 @@ def diagnose_from_trans_fitness(log, trans_fitness, parameters=None):
     Parameters
     -------------
     log
-        Trace log
+        Trace log_skeleton
     trans_fitness
         For each transition, keeps track of unfit executions
     parameters

@@ -13,12 +13,12 @@ VERSIONS = {Variants.RECOMPOS_MAXIMAL}
 def apply(log, net, im, fm, variant=Variants.RECOMPOS_MAXIMAL, parameters=None):
     """
     Apply the recomposition alignment approach
-    to a log and a Petri net performing decomposition
+    to a log_skeleton and a Petri net performing decomposition
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     net
         Petri net
     im

@@ -7,7 +7,7 @@ RETURN_VARIANTS = 'return_variants'
 
 def apply(df, parameters=None):
     """
-    Convert a dataframe into a log containing N case per variant (only control-flow
+    Convert a dataframe into a log_skeleton containing N case per variant (only control-flow
     perspective is considered)
 
     Parameters
@@ -19,8 +19,8 @@ def apply(df, parameters=None):
 
     Returns
     -------------
-    log
-        Event log
+    log_skeleton
+        Event log_skeleton
     """
     from pm4py.statistics.traces.pandas import case_statistics
 

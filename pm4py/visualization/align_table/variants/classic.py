@@ -13,7 +13,7 @@ def apply(log, aligned_traces, parameters=None):
     Parameters
     -------------
     log
-        Event log
+        Event log_skeleton
     aligned_traces
         Aligned traces
     parameters

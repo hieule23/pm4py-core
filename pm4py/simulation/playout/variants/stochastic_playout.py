@@ -19,7 +19,7 @@ class Parameters(Enum):
     CASE_ID_KEY = constants.PARAMETER_CONSTANT_CASEID_KEY
     NO_TRACES = "noTraces"
     MAX_TRACE_LENGTH = "maxTraceLength"
-    LOG = "log"
+    LOG = "log_skeleton"
     STOCHASTIC_MAP = "stochastic_map"
 
 
@@ -28,7 +28,7 @@ def apply_playout(net, initial_marking, no_traces=100, max_trace_length=100,
                   activity_key=xes_constants.DEFAULT_NAME_KEY, timestamp_key=xes_constants.DEFAULT_TIMESTAMP_KEY,
                   final_marking=None, smap=None, log=None):
     """
-    Do the playout of a Petrinet generating a log
+    Do the playout of a Petrinet generating a log_skeleton
 
     Parameters
     ----------
@@ -58,7 +58,7 @@ def apply_playout(net, initial_marking, no_traces=100, max_trace_length=100,
         final_marking = final_marking_discovery.discover_final_marking(net)
     if smap is None:
         if log is None:
-            raise Exception("please provide at least one between stochastic map and log")
+            raise Exception("please provide at least one between stochastic map and log_skeleton")
         smap = replay.get_map_from_log_and_net(log, net, initial_marking, final_marking,
                                                parameters={Parameters.ACTIVITY_KEY: activity_key,
                                                            Parameters.TIMESTAMP_KEY: timestamp_key})
@@ -96,7 +96,7 @@ def apply_playout(net, initial_marking, no_traces=100, max_trace_length=100,
 
 def apply(net, initial_marking, final_marking=None, parameters=None):
     """
-    Do the playout of a Petrinet generating a log
+    Do the playout of a Petrinet generating a log_skeleton
 
     Parameters
     -----------
@@ -108,7 +108,7 @@ def apply(net, initial_marking, final_marking=None, parameters=None):
         If provided, the final marking of the Petri net
     parameters
         Parameters of the algorithm:
-            Parameters.NO_TRACES -> Number of traces of the log to generate
+            Parameters.NO_TRACES -> Number of traces of the log_skeleton to generate
             Parameters.MAX_TRACE_LENGTH -> Maximum trace length
     """
     if parameters is None:

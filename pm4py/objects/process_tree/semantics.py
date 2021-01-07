@@ -22,7 +22,7 @@ class GenerationTree(ProcessTree):
         ProcessTree.__init__(self, operator=tree.operator, parent=tree.parent, children=tree.children, label=tree.label)
 
     def __eq__(self, other):
-        # method that is different from default one (different taus must give different ID in log generation!!!!)
+        # method that is different from default one (different taus must give different ID in log_skeleton generation!!!!)
         return id(self) == id(other)
 
     def __hash__(self):
@@ -31,7 +31,7 @@ class GenerationTree(ProcessTree):
 
 def generate_log(pt0, no_traces=100):
     """
-    Generate a log out of a process tree
+    Generate a log_skeleton out of a process tree
 
     Parameters
     ------------
@@ -42,11 +42,11 @@ def generate_log(pt0, no_traces=100):
 
     Returns
     ------------
-    log
-        Trace log object
+    log_skeleton
+        Trace log_skeleton object
     """
     pt = deepcopy(pt0)
-    # different taus must give different ID in log generation!!!!
+    # different taus must give different ID in log_skeleton generation!!!!
     # so we cannot use the default process tree class
     # we use this different one!
     pt = GenerationTree(pt)

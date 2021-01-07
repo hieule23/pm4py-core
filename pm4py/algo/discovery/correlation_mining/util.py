@@ -14,7 +14,7 @@ def get_c_matrix(PS_matrix, duration_matrix, activities, activities_counter):
     duration_matrix
         Duration matrix
     activities
-        Ordered list of activities of the log
+        Ordered list of activities of the log_skeleton
     activities_counter
         Counter of activities
 
@@ -46,7 +46,7 @@ def resolve_LP(C_matrix, duration_matrix, activities, activities_counter):
     duration_matrix
         Duration matrix
     activities
-        Ordered list of activities of the log
+        Ordered list of activities of the log_skeleton
     activities_counter
         Counter of activities
 

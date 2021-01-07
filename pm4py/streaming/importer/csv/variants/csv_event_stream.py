@@ -31,7 +31,7 @@ class CSVEventStreamReader(object):
 
     def __next__(self):
         """
-        Gets the next element of the log
+        Gets the next element of the log_skeleton
         """
         event = self.read_event()
         if self.reading_log:
@@ -40,7 +40,7 @@ class CSVEventStreamReader(object):
 
     def to_event_stream(self, event_stream):
         """
-        Sends the content of a CSV log to an event stream
+        Sends the content of a CSV log_skeleton to an event stream
 
         Parameters
         --------------

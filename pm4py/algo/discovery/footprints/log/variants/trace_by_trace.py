@@ -14,7 +14,7 @@ class Parameters(Enum):
 
 def apply(log, parameters=None):
     """
-    Discovers a footprint object from an event log
+    Discovers a footprint object from an event log_skeleton
     (the footprints are returned case-by-case)
 
     Parameters
@@ -28,7 +28,7 @@ def apply(log, parameters=None):
     Returns
     --------------
     footprints_obj
-        List of footprints for the cases of the log
+        List of footprints for the cases of the log_skeleton
     """
     if parameters is None:
         parameters = {}

@@ -245,7 +245,7 @@ def apply(log, net, im, fm, parameters=None):
     Parameters
     -------------
     log
-        Event log
+        Event log_skeleton
     net
         Accepting Petri net without duplicate transitions and where the preset is always distinct from the postset
     im
@@ -256,11 +256,11 @@ def apply(log, net, im, fm, parameters=None):
         Parameters of the algorithm:
             PARAM_NUM_SIMULATIONS => (default: 100)
             PARAM_FORCE_DISTRIBUTION => Force a particular stochastic distribution (e.g. normal) when the stochastic map
-            is discovered from the log (default: None; no distribution is forced)
+            is discovered from the log_skeleton (default: None; no distribution is forced)
             PARAM_ENABLE_DIAGNOSTICS => Enable the printing of diagnostics (default: True)
             PARAM_DIAGN_INTERVAL => Interval of time in which diagnostics of the simulation are printed (default: 32)
-            PARAM_CASE_ARRIVAL_RATIO => Case arrival of new cases (default: None; inferred from the log)
-            PARAM_PROVIDED_SMAP => Stochastic map that is used in the simulation (default: None; inferred from the log)
+            PARAM_CASE_ARRIVAL_RATIO => Case arrival of new cases (default: None; inferred from the log_skeleton)
+            PARAM_PROVIDED_SMAP => Stochastic map that is used in the simulation (default: None; inferred from the log_skeleton)
             PARAM_MAP_RESOURCES_PER_PLACE => Specification of the number of resources available per place
             (default: None; each place gets the default number of resources)
             PARAM_DEFAULT_NUM_RESOURCES_PER_PLACE => Default number of resources per place when not specified
@@ -272,16 +272,16 @@ def apply(log, net, im, fm, parameters=None):
     Returns
     ------------
     simulated_log
-        Simulated event log
+        Simulated event log_skeleton
     simulation_result
         Result of the simulation:
             Outputs.OUTPUT_PLACES_INTERVAL_TREES => inteval trees that associate to each place the times in which it was occupied.
             Outputs.OUTPUT_TRANSITIONS_INTERVAL_TREES => interval trees that associate to each transition the intervals of time
             in which it could not fire because some token was in the output.
-            Outputs.OUTPUT_CASES_EX_TIME => Throughput time of the cases included in the simulated log
+            Outputs.OUTPUT_CASES_EX_TIME => Throughput time of the cases included in the simulated log_skeleton
             Outputs.OUTPUT_MEDIAN_CASES_EX_TIME => Median of the throughput times
             Outputs.OUTPUT_CASE_ARRIVAL_RATIO => Case arrival ratio that was specified in the simulation
-            Outputs.OUTPUT_TOTAL_CASES_TIME => Total time occupied by cases of the simulated log
+            Outputs.OUTPUT_TOTAL_CASES_TIME => Total time occupied by cases of the simulated log_skeleton
     """
     if parameters is None:
         parameters = {}

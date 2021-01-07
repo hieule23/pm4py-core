@@ -17,7 +17,7 @@ class Parameters(Enum):
 
 def form_log_from_dictio_couple(first_cases_repr, second_cases_repr, enable_multiplier=False):
     """
-    Form a log from a couple of dictionary, to use for
+    Form a log_skeleton from a couple of dictionary, to use for
     root cause analysis
 
     Parameters
@@ -31,8 +31,8 @@ def form_log_from_dictio_couple(first_cases_repr, second_cases_repr, enable_mult
 
     Returns
     ------------
-    log
-        Trace log object
+    log_skeleton
+        Trace log_skeleton object
     """
     log = EventLog()
 
@@ -63,7 +63,7 @@ def form_log_from_dictio_couple(first_cases_repr, second_cases_repr, enable_mult
 def form_representation_from_dictio_couple(first_cases_repr, second_cases_repr, string_attributes, numeric_attributes,
                                            enable_multiplier=False):
     """
-    Gets a log representation, useful for training the decision tree,
+    Gets a log_skeleton representation, useful for training the decision tree,
     from a couple of dictionaries along with the list of string attributes
     and numeric attributes to consider, to use for root cause analysis
 
@@ -74,16 +74,16 @@ def form_representation_from_dictio_couple(first_cases_repr, second_cases_repr, 
     second_cases_repr
         Second cases representation
     string_attributes
-        String attributes contained in the log
+        String attributes contained in the log_skeleton
     numeric_attributes
-        Numeric attributes contained in the log
+        Numeric attributes contained in the log_skeleton
     enable_multiplier
         Enable balancing of classes
 
     Returns
     ------------
     data
-        Matrix representation of the event log
+        Matrix representation of the event log_skeleton
     feature_names
         Array of feature names
     """
@@ -104,7 +104,7 @@ def diagnose_from_trans_fitness(log, trans_fitness, parameters=None):
     Parameters
     -------------
     log
-        Trace log object
+        Trace log_skeleton object
     trans_fitness
         Transition fitness object
     parameters
@@ -185,7 +185,7 @@ def diagnose_from_notexisting_activities(log, notexisting_activities_in_model, p
     Parameters
     -------------
     log
-        Trace log object
+        Trace log_skeleton object
     notexisting_activities_in_model
         Not existing activities in the model
     parameters

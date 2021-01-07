@@ -5,7 +5,7 @@ from pm4py.objects.log import log as log_inst
 
 def filter_(func, log):
     '''
-    Filters the log according to a given lambda function.
+    Filters the log_skeleton according to a given lambda function.
 
     Parameters
     ----------
@@ -23,13 +23,13 @@ def filter_(func, log):
         return log_inst.EventStream(list(filter(func, log)), attributes=log.attributes, classifiers=log.classifiers,
                                     omni_present=log.omni_present, extensions=log.extensions)
     else:
-        warnings.warn('input log object not of appropriate type, filter() not applied')
+        warnings.warn('input log_skeleton object not of appropriate type, filter() not applied')
         return log
 
 
 def map_(func, log):
     '''
-        Maps the log according to a given lambda function.
+        Maps the log_skeleton according to a given lambda function.
         domain and target of the function need to be of the same type (either trace or event) otherwise, the map behaves unexpected
 
         Parameters
@@ -48,7 +48,7 @@ def map_(func, log):
         return log_inst.EventStream(list(map(func, log)), attributes=log.attributes, classifiers=log.classifiers,
                                     omni_present=log.omni_present, extensions=log.extensions)
     else:
-        warnings.warn('input log object not of appropriate type, map() not applied')
+        warnings.warn('input log_skeleton object not of appropriate type, map() not applied')
         return log
 
 
@@ -61,5 +61,5 @@ def sort_(func, log, reverse=False):
                                     classifiers=log.classifiers,
                                     omni_present=log.omni_present, extensions=log.extensions)
     else:
-        warnings.warn('input log object not of appropriate type, map() not applied')
+        warnings.warn('input log_skeleton object not of appropriate type, map() not applied')
         return log

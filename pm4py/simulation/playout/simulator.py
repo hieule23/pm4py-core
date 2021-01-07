@@ -15,7 +15,7 @@ VERSIONS = {Variants.BASIC_PLAYOUT, Variants.EXTENSIVE, Variants.STOCHASTIC_PLAY
 
 def apply(net, initial_marking, final_marking=None, parameters=None, variant=DEFAULT_VARIANT):
     """
-    Do the playout of a Petrinet generating a log
+    Do the playout of a Petrinet generating a log_skeleton
 
     Parameters
     -----------
@@ -33,7 +33,7 @@ def apply(net, initial_marking, final_marking=None, parameters=None, variant=DEF
             frequency of the transitions
             - Variants.STOCHASTIC_PLAYOUT: selects random traces from the model, looking at the
             stochastic frequency of the transitions. Requires the provision of the stochastic map
-            or the log.
+            or the log_skeleton.
             - Variants.EXTENSIVE: gets all the traces from the model. can be expensive
     """
     return exec_utils.get_variant(variant).apply(net, initial_marking, final_marking=final_marking,

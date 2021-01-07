@@ -9,13 +9,13 @@ from pm4py.util import exec_utils, constants, xes_constants
 
 def apply_log(log, model, parameters=None):
     """
-    Apply log-skeleton based conformance checking given an event log
-    and a log-skeleton model
+    Apply log_skeleton-skeleton based conformance checking given an event log_skeleton
+    and a log_skeleton-skeleton model
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     model
         Log-skeleton model
     parameters
@@ -61,8 +61,8 @@ def apply_log(log, model, parameters=None):
 
 def apply_trace(trace, model, parameters=None):
     """
-    Apply log-skeleton based conformance checking given a trace
-    and a log-skeleton model
+    Apply log_skeleton-skeleton based conformance checking given a trace
+    and a log_skeleton-skeleton model
 
     Parameters
     --------------
@@ -94,8 +94,8 @@ def apply_trace(trace, model, parameters=None):
 
 def apply_actlist(trace, model, parameters=None):
     """
-    Apply log-skeleton based conformance checking given the list of activities of a trace
-    and a log-skeleton model
+    Apply log_skeleton-skeleton based conformance checking given the list of activities of a trace
+    and a log_skeleton-skeleton model
 
     Parameters
     --------------
@@ -172,7 +172,7 @@ def apply_actlist(trace, model, parameters=None):
 
 def apply_from_variants_list(var_list, model, parameters=None):
     """
-    Performs conformance checking using the log skeleton,
+    Performs conformance checking using the log_skeleton skeleton,
     applying it from a list of variants
 
     Parameters
@@ -188,7 +188,7 @@ def apply_from_variants_list(var_list, model, parameters=None):
     --------------
     conformance_dictio
         Dictionary containing, for each variant, the result
-        of log skeleton checking
+        of log_skeleton skeleton checking
     """
     if parameters is None:
         parameters = {}
@@ -212,7 +212,7 @@ def apply_from_variants_list(var_list, model, parameters=None):
 
 def after_decode(log_skeleton):
     """
-    Prepares the log skeleton after decoding
+    Prepares the log_skeleton skeleton after decoding
 
     Parameters
     --------------
@@ -236,13 +236,13 @@ def after_decode(log_skeleton):
 
 def get_diagnostics_dataframe(log, conf_result, parameters=None):
     """
-    Gets the diagnostics dataframe from a log and the results
-    of log skeleton-based conformance checking
+    Gets the diagnostics dataframe from a log_skeleton and the results
+    of log_skeleton skeleton-based conformance checking
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     conf_result
         Results of conformance checking
 

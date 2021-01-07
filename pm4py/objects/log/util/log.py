@@ -4,11 +4,11 @@ from pm4py.util import xes_constants as xes_util
 # TODO: we can do some instance checking and then support both trace level and event level logs..
 def get_event_labels(event_log, key):
     """
-    Fetches the labels present in a log, given a key to use within the events.
+    Fetches the labels present in a log_skeleton, given a key to use within the events.
 
     Parameters
     ----------
-    :param event_log: log to use
+    :param event_log: log_skeleton to use
     :param key: to use for event identification, can for example  be "concept:name"
 
     Returns
@@ -25,11 +25,11 @@ def get_event_labels(event_log, key):
 
 def get_event_labels_counted(event_log, key):
     """
-    Fetches the labels (and their frequency) present in a log, given a key to use within the events.
+    Fetches the labels (and their frequency) present in a log_skeleton, given a key to use within the events.
 
     Parameters
     ----------
-    :param event_log: log to use
+    :param event_log: log_skeleton to use
     :param key: to use for event identification, can for example  be "concept:name"
 
     Returns
@@ -53,7 +53,7 @@ def get_trace_variants(event_log, key=xes_util.DEFAULT_NAME_KEY):
 
     Parameters
     ---------
-    :param event_log: log
+    :param event_log: log_skeleton
     :param key: key to use to identify the label of an event
 
     Returns

@@ -8,7 +8,7 @@ from pm4py.util import exec_utils
 def evaluate(aligned_traces, parameters=None):
     """
     Gets a dictionary expressing fitness in a synthetic way from the list of boolean values
-    saying if a trace in the log is fit, and the float values of fitness associated to each trace
+    saying if a trace in the log_skeleton is fit, and the float values of fitness associated to each trace
 
     Parameters
     ------------
@@ -48,7 +48,7 @@ def apply(log, petri_net, initial_marking, final_marking, parameters=None):
     Parameters
     -----------
     log
-        Trace log
+        Trace log_skeleton
     petri_net
         Petri net
     initial_marking

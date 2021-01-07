@@ -5,7 +5,7 @@ from pm4py.util import exec_utils
 
 def get_end_activities(log, parameters=None):
     """
-    Get the end attributes of the log along with their count
+    Get the end attributes of the log_skeleton along with their count
 
     Parameters
     ----------

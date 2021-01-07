@@ -19,7 +19,7 @@ def apply(log, net, marking, final_marking, parameters=None):
     Parameters
     ----------
     log
-        Trace log
+        Trace log_skeleton
     net
         Petri net
     marking
@@ -153,13 +153,13 @@ def transform_markings_from_sync_to_original_net(markings0, net, parameters=None
 
 def align_fake_log_stop_marking(fake_log, net, marking, final_marking, parameters=None):
     """
-    Align the 'fake' log with all the prefixes in order to get the markings in which
+    Align the 'fake' log_skeleton with all the prefixes in order to get the markings in which
     the alignment stops
 
     Parameters
     -------------
     fake_log
-        Fake log
+        Fake log_skeleton
     net
         Petri net
     marking
@@ -172,7 +172,7 @@ def align_fake_log_stop_marking(fake_log, net, marking, final_marking, parameter
     Returns
     -------------
     alignment
-        For each trace in the log, return the marking in which the alignment stops (expressed as place name with count)
+        For each trace in the log_skeleton, return the marking in which the alignment stops (expressed as place name with count)
     """
     if parameters is None:
         parameters = {}

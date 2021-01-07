@@ -10,12 +10,12 @@ from pm4py.algo.conformance.tokenreplay import algorithm as executor
 
 def get_map_from_log_and_net(log, net, initial_marking, final_marking, force_distribution=None, parameters=None):
     """
-    Get transition stochastic distribution map given the log and the Petri net
+    Get transition stochastic distribution map given the log_skeleton and the Petri net
 
     Parameters
     -----------
     log
-        Event log
+        Event log_skeleton
     net
         Petri net
     initial_marking

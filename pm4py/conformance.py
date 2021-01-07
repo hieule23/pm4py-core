@@ -5,7 +5,7 @@ def conformance_tbr(log, petri_net, initial_marking, final_marking):
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     petri_net
         Petri net
     initial_marking
@@ -16,7 +16,7 @@ def conformance_tbr(log, petri_net, initial_marking, final_marking):
     Returns
     --------------
     replay_results
-        A list of replay results for each trace of the log
+        A list of replay results for each trace of the log_skeleton
     """
     from pm4py.algo.conformance.tokenreplay import algorithm as token_replay
     return token_replay.apply(log, petri_net, initial_marking, final_marking)
@@ -24,12 +24,12 @@ def conformance_tbr(log, petri_net, initial_marking, final_marking):
 
 def conformance_alignments(log, petri_net, initial_marking, final_marking):
     """
-    Apply the alignments algorithm between a log and a Petri net
+    Apply the alignments algorithm between a log_skeleton and a Petri net
 
     Parameters
     -------------
     log
-        Event log
+        Event log_skeleton
     petri_net
         Petri net
     initial_marking
@@ -40,7 +40,7 @@ def conformance_alignments(log, petri_net, initial_marking, final_marking):
     Returns
     -------------
     aligned_traces
-        A list of alignments for each trace of the log
+        A list of alignments for each trace of the log_skeleton
     """
     from pm4py.algo.conformance.alignments import algorithm as alignments
     return alignments.apply(log, petri_net, initial_marking, final_marking)
@@ -53,7 +53,7 @@ def evaluate_fitness_tbr(log, petri_net, initial_marking, final_marking):
     Parameters
     ---------------
     log
-        Event log
+        Event log_skeleton
     petri_net
         Petri net
     initial_marking
@@ -78,7 +78,7 @@ def evaluate_fitness_alignments(log, petri_net, initial_marking, final_marking):
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     petri_net
         Petri net object
     initial_marking
@@ -103,7 +103,7 @@ def evaluate_precision_tbr(log, petri_net, initial_marking, final_marking):
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     petri_net
         Petri net object
     initial_marking
@@ -128,7 +128,7 @@ def evaluate_precision_alignments(log, petri_net, initial_marking, final_marking
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     petri_net
         Petri net object
     initial_marking

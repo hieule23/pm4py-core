@@ -37,7 +37,7 @@ def keep_only_one_attribute_per_event(log, attribute_key):
     Parameters
     ---------------
     log
-        Event log
+        Event log_skeleton
     attribute_key
         Attribute key
     """

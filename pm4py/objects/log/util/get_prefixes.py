@@ -9,12 +9,12 @@ import logging
 
 def get_log_with_log_prefixes(log, parameters=None):
     """
-    Gets an extended log that contains, in order, all the prefixes for a case of the original log
+    Gets an extended log_skeleton that contains, in order, all the prefixes for a case of the original log_skeleton
 
     Parameters
     --------------
     log
-        Original log
+        Original log_skeleton
     parameters
         Possible parameters of the algorithm
 
@@ -23,7 +23,7 @@ def get_log_with_log_prefixes(log, parameters=None):
     all_prefixes_log
         Log with all the prefixes
     change_indexes
-        Indexes of the extended log where there was a change between cases
+        Indexes of the extended log_skeleton where there was a change between cases
     """
     all_prefixes_log = EventLog()
     change_indexes = []
@@ -45,9 +45,9 @@ def get_log_traces_to_activities(log, activities, parameters=None):
     Parameters
     -------------
     log
-        Trace log object
+        Trace log_skeleton object
     activities
-        List of activities in the log
+        List of activities in the log_skeleton
     parameters
         Possible parameters of the algorithm, including:
             PARAMETER_CONSTANT_ACTIVITY_KEY -> activity
@@ -58,7 +58,7 @@ def get_log_traces_to_activities(log, activities, parameters=None):
     list_logs
         List of event logs taking to the first occurrence of each activity
     considered_activities
-        All activities that are effectively have been inserted in the list of logs (in some of them, the resulting log
+        All activities that are effectively have been inserted in the list of logs (in some of them, the resulting log_skeleton
         may be empty)
     """
     if parameters is None:
@@ -94,13 +94,13 @@ def get_log_traces_to_activities(log, activities, parameters=None):
 
 def get_log_traces_until_activity(log, activity, parameters=None):
     """
-    Gets a reduced version of the log containing, for each trace, only the events before a
+    Gets a reduced version of the log_skeleton containing, for each trace, only the events before a
     specified activity
 
     Parameters
     -------------
     log
-        Trace log
+        Trace log_skeleton
     activity
         Activity to reach
     parameters
@@ -111,7 +111,7 @@ def get_log_traces_until_activity(log, activity, parameters=None):
     Returns
     -------------
     new_log
-        New log
+        New log_skeleton
     """
     if parameters is None:
         parameters = {}

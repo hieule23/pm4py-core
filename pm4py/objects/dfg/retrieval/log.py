@@ -18,12 +18,12 @@ class Parameters(Enum):
 
 def freq_triples(log, parameters=None):
     """
-    Counts the number of directly follows occurrences, i.e. of the form <...a,b...>, in an event log.
+    Counts the number of directly follows occurrences, i.e. of the form <...a,b...>, in an event log_skeleton.
 
     Parameters
     ----------
     log
-        Trace log
+        Trace log_skeleton
     parameters
         Possible parameters passed to the algorithms:
             activity_key -> Attribute to use as activity
@@ -44,12 +44,12 @@ def freq_triples(log, parameters=None):
 
 def native(log, parameters=None):
     """
-    Counts the number of directly follows occurrences, i.e. of the form <...a,b...>, in an event log.
+    Counts the number of directly follows occurrences, i.e. of the form <...a,b...>, in an event log_skeleton.
 
     Parameters
     ----------
     log
-        Trace log
+        Trace log_skeleton
     parameters
         Possible parameters passed to the algorithms:
             activity_key -> Attribute to use as activity

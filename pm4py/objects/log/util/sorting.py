@@ -29,12 +29,12 @@ def sort_timestamp_trace(trace, timestamp_key=xes.DEFAULT_TIMESTAMP_KEY, reverse
 
 def sort_timestamp_stream(event_log, timestamp_key=xes.DEFAULT_TIMESTAMP_KEY, reverse_sort=False):
     """
-    Sort an event log based on timestamp key
+    Sort an event log_skeleton based on timestamp key
 
     Parameters
     -----------
     event_log
-        Event log
+        Event log_skeleton
     timestamp_key
         Timestamp key
     reverse_sort
@@ -43,7 +43,7 @@ def sort_timestamp_stream(event_log, timestamp_key=xes.DEFAULT_TIMESTAMP_KEY, re
     Returns
     -----------
     event_log
-        Sorted event log
+        Sorted event log_skeleton
     """
     new_event_log = deepcopy(event_log)
     new_event_log._list.sort(key=lambda x: x[timestamp_key], reverse=reverse_sort)
@@ -52,7 +52,7 @@ def sort_timestamp_stream(event_log, timestamp_key=xes.DEFAULT_TIMESTAMP_KEY, re
 
 def sort_timestamp_log(log, timestamp_key=xes.DEFAULT_TIMESTAMP_KEY, reverse_sort=False):
     """
-    Sort a log based on timestamp key
+    Sort a log_skeleton based on timestamp key
 
     Parameters
     -----------
@@ -65,8 +65,8 @@ def sort_timestamp_log(log, timestamp_key=xes.DEFAULT_TIMESTAMP_KEY, reverse_sor
 
     Returns
     -----------
-    log
-        Sorted log
+    log_skeleton
+        Sorted log_skeleton
     """
     new_log = deepcopy(log)
     new_log._list = [x for x in new_log._list if len(x) > 0]
@@ -81,12 +81,12 @@ def sort_timestamp_log(log, timestamp_key=xes.DEFAULT_TIMESTAMP_KEY, reverse_sor
 
 def sort_timestamp(log, timestamp_key=xes.DEFAULT_TIMESTAMP_KEY, reverse_sort=False):
     """
-    Sort a log based on timestamp key
+    Sort a log_skeleton based on timestamp key
 
     Parameters
     -----------
     log
-        Trace/Event log
+        Trace/Event log_skeleton
     timestamp_key
         Timestamp key
     reverse_sort
@@ -94,8 +94,8 @@ def sort_timestamp(log, timestamp_key=xes.DEFAULT_TIMESTAMP_KEY, reverse_sort=Fa
 
     Returns
     -----------
-    log
-        Sorted Trace/Event log
+    log_skeleton
+        Sorted Trace/Event log_skeleton
     """
     if type(log) is EventLog:
         return sort_timestamp_log(log, timestamp_key=timestamp_key, reverse_sort=reverse_sort)
@@ -104,7 +104,7 @@ def sort_timestamp(log, timestamp_key=xes.DEFAULT_TIMESTAMP_KEY, reverse_sort=Fa
 
 def sort_lambda_log(log, sort_function, reverse=False):
     """
-    Sort a log based on a lambda expression
+    Sort a log_skeleton based on a lambda expression
 
     Parameters
     ------------
@@ -118,7 +118,7 @@ def sort_lambda_log(log, sort_function, reverse=False):
     Returns
     ------------
     new_log
-        Sorted log
+        Sorted log_skeleton
     """
     new_log = deepcopy(log)
     new_log._list.sort(key=sort_function, reverse=reverse)
@@ -152,7 +152,7 @@ def sort_lambda_stream(stream, sort_function, reverse=False):
 
 def sort_lambda(log, sort_function, reverse=False):
     """
-    Sort a log based on lambda expression
+    Sort a log_skeleton based on lambda expression
 
     Parameters
     -------------
@@ -165,8 +165,8 @@ def sort_lambda(log, sort_function, reverse=False):
 
     Returns
     -------------
-    log
-        Sorted log
+    log_skeleton
+        Sorted log_skeleton
     """
     if type(log) is EventLog:
         return sort_lambda_log(log, sort_function, reverse=reverse)

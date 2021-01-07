@@ -23,10 +23,10 @@ def get_case_arrival_avg(log, parameters=None):
     Parameters
     --------------
     log
-        Trace log
+        Trace log_skeleton
     parameters
         Parameters of the algorithm, including:
-            Parameters.TIMESTAMP_KEY -> attribute of the log to be used as timestamp
+            Parameters.TIMESTAMP_KEY -> attribute of the log_skeleton to be used as timestamp
 
     Returns
     --------------
@@ -66,10 +66,10 @@ def get_case_dispersion_avg(log, parameters=None):
     Parameters
     --------------
     log
-        Trace log
+        Trace log_skeleton
     parameters
         Parameters of the algorithm, including:
-            Parameters.TIMESTAMP_KEY -> attribute of the log to be used as timestamp
+            Parameters.TIMESTAMP_KEY -> attribute of the log_skeleton to be used as timestamp
 
     Returns
     --------------

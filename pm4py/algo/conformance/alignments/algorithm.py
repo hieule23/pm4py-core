@@ -63,7 +63,7 @@ def apply_trace(trace, petri_net, initial_marking, final_marking, parameters=Non
     Parameters
     -----------
     trace
-        :class:`pm4py.log.log.Trace` trace of events
+        :class:`pm4py.log_skeleton.log_skeleton.Trace` trace of events
     petri_net
         :class:`pm4py.objects.petri.petrinet.PetriNet` the model to use for the alignment
     initial_marking
@@ -74,7 +74,7 @@ def apply_trace(trace, petri_net, initial_marking, final_marking, parameters=Non
         selected variant of the algorithm, possible values: {\'Variants.VERSION_STATE_EQUATION_A_STAR, Variants.VERSION_DIJKSTRA_NO_HEURISTICS \'}
     parameters
         :class:`dict` parameters of the algorithm, for key \'state_equation_a_star\':
-            Parameters.ACTIVITY_KEY -> Attribute in the log that contains the activity
+            Parameters.ACTIVITY_KEY -> Attribute in the log_skeleton that contains the activity
             Parameters.PARAM_MODEL_COST_FUNCTION ->
             mapping of each transition in the model to corresponding synchronous costs
             Parameters.PARAM_SYNC_COST_FUNCTION ->
@@ -87,7 +87,7 @@ def apply_trace(trace, petri_net, initial_marking, final_marking, parameters=Non
         :class:`dict` with keys **alignment**, **cost**, **visited_states**, **queued_states** and
         **traversed_arcs**
         The alignment is a sequence of labels of the form (a,t), (a,>>), or (>>,t)
-        representing synchronous/log/model-moves.
+        representing synchronous/log_skeleton/model-moves.
     """
     if parameters is None:
         parameters = copy({PARAMETER_CONSTANT_ACTIVITY_KEY: DEFAULT_NAME_KEY})
@@ -97,11 +97,11 @@ def apply_trace(trace, petri_net, initial_marking, final_marking, parameters=Non
 
 def apply_log(log, petri_net, initial_marking, final_marking, parameters=None, variant=DEFAULT_VARIANT):
     """
-    apply alignments to a log
+    apply alignments to a log_skeleton
     Parameters
     -----------
     log
-        object of the form :class:`pm4py.log.log.EventLog` event log
+        object of the form :class:`pm4py.log_skeleton.log_skeleton.EventLog` event log_skeleton
     petri_net
         :class:`pm4py.objects.petri.petrinet.PetriNet` the model to use for the alignment
     initial_marking
@@ -119,7 +119,7 @@ def apply_log(log, petri_net, initial_marking, final_marking, parameters=None, v
         :class:`list` of :class:`dict` with keys **alignment**, **cost**, **visited_states**, **queued_states** and
         **traversed_arcs**
         The alignment is a sequence of labels of the form (a,t), (a,>>), or (>>,t)
-        representing synchronous/log/model-moves.
+        representing synchronous/log_skeleton/model-moves.
     """
     if parameters is None:
         parameters = dict()
@@ -182,12 +182,12 @@ def apply_log(log, petri_net, initial_marking, final_marking, parameters=None, v
 
 def get_diagnostics_dataframe(log, align_output, parameters=None):
     """
-    Gets the diagnostics results of alignments (of a log) in a dataframe
+    Gets the diagnostics results of alignments (of a log_skeleton) in a dataframe
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     align_output
         Output of the alignments
 

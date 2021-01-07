@@ -19,7 +19,7 @@ def apply(log, aligned_traces, variant=DEFAULT_VARIANT, parameters=None):
     Parameters
     -------------
     log
-        Event log
+        Event log_skeleton
     aligned_traces
         Aligned traces
     variant

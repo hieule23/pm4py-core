@@ -58,7 +58,7 @@ def insert_index(df, column_name=constants.DEFAULT_INDEX_KEY):
 
 def check_is_dataframe(log):
     """
-    Checks if a log object is a dataframe
+    Checks if a log_skeleton object is a dataframe
 
     Parameters
     -------------

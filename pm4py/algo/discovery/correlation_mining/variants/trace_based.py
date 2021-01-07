@@ -23,12 +23,12 @@ DEFAULT_INDEX_KEY = "@@@index"
 def apply(log, parameters=None):
     """
     Novel approach of correlation mining, that creates the PS-matrix and the duration matrix
-    using the order list of events of each trace of the log
+    using the order list of events of each trace of the log_skeleton
 
     Parameters
     -------------
     log
-        Event log
+        Event log_skeleton
     parameters
         Parameters
 
@@ -58,9 +58,9 @@ def resolve_lp_get_dfg(PS_matrix, duration_matrix, activities, activities_counte
     duration_matrix
         Duration matrix
     activities
-        List of activities of the log
+        List of activities of the log_skeleton
     activities_counter
-        Counter for the activities of the log
+        Counter for the activities of the log_skeleton
 
     Returns
     ---------------
@@ -110,27 +110,27 @@ def get_PS_duration_matrix(activities, trace_grouped_list, parameters=None):
 
 def preprocess_log(log, activities=None, activities_counter=None, parameters=None):
     """
-    Preprocess the log to get a grouped list of simplified traces (per activity)
+    Preprocess the log_skeleton to get a grouped list of simplified traces (per activity)
 
     Parameters
     --------------
     log
         Log object
     activities
-        (if provided) activities of the log
+        (if provided) activities of the log_skeleton
     activities_counter
-        (if provided) counter of the activities of the log
+        (if provided) counter of the activities of the log_skeleton
     parameters
         Parameters of the algorithm
 
     Returns
     --------------
     traces_list
-        List of simplified traces of the log
+        List of simplified traces of the log_skeleton
     trace_grouped_list
         Grouped list of simplified traces (per activity)
     activities
-        Activities of the log
+        Activities of the log_skeleton
     activities_counter
         Activities counter
     """
@@ -184,7 +184,7 @@ def get_precede_succeed_matrix(activities, trace_grouped_list, timestamp_key, st
     Parameters
     ---------------
     activities
-        Sorted list of activities of the log
+        Sorted list of activities of the log_skeleton
     trace_grouped_list
         A list of lists of lists, containing for each trace and each activity the events having such activity
     timestamp_key
@@ -229,7 +229,7 @@ def get_duration_matrix(activities, trace_grouped_list, timestamp_key, start_tim
     Parameters
     --------------
     activities
-        Sorted list of activities of the log
+        Sorted list of activities of the log_skeleton
     trace_grouped_list
         A list of lists of lists, containing for each trace and each activity the events having such activity
     timestamp_key

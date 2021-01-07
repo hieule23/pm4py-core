@@ -9,7 +9,7 @@ INDEX_COLUMN = "@@index"
 
 def read_xes(file_path):
     """
-    Reads an event log in the XES standard
+    Reads an event log_skeleton in the XES standard
 
     Parameters
     ---------------
@@ -18,8 +18,8 @@ def read_xes(file_path):
 
     Returns
     ---------------
-    log
-        Event log
+    log_skeleton
+        Event log_skeleton
     """
     from pm4py.objects.log.importer.xes import importer as xes_importer
     log = xes_importer.apply(file_path)
@@ -31,7 +31,7 @@ def read_xes(file_path):
                         details="Use pandas to import CSV files")
 def read_csv(file_path, sep=",", quotechar=None, encoding='utf-8', nrows=10000000, timest_format=None):
     """
-    Reads an event log in the CSV format (Pandas adapter)
+    Reads an event log_skeleton in the CSV format (Pandas adapter)
 
     Parameters
     ----------------
@@ -160,7 +160,7 @@ def read_bpmn(file_path):
                         details="Use pm4py.convert.convert_to_event_log method")
 def convert_to_event_log(obj):
     """
-    Converts a log object to an event log
+    Converts a log_skeleton object to an event log_skeleton
 
     Parameters
     -------------
@@ -169,8 +169,8 @@ def convert_to_event_log(obj):
 
     Returns
     -------------
-    log
-        Event log object
+    log_skeleton
+        Event log_skeleton object
     """
     from pm4py.convert import convert_to_event_log
     return convert_to_event_log(obj)
@@ -181,7 +181,7 @@ def convert_to_event_log(obj):
                         details="Use pm4py.convert.convert_to_event_stream method")
 def convert_to_event_stream(obj):
     """
-    Converts a log object to an event stream
+    Converts a log_skeleton object to an event stream
 
     Parameters
     --------------
@@ -202,7 +202,7 @@ def convert_to_event_stream(obj):
                         details="Use pm4py.convert.convert_to_event_stream method")
 def convert_to_dataframe(obj):
     """
-    Converts a log object to a dataframe
+    Converts a log_skeleton object to a dataframe
 
     Parameters
     --------------

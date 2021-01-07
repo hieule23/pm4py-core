@@ -16,12 +16,12 @@ VERSIONS = {CLASSIC}
 
 def apply(log, variant=DEFAULT_VARIANT, parameters=None):
     """
-    Discover a log skeleton from an event log
+    Discover a log_skeleton skeleton from an event log_skeleton
 
     Parameters
     -------------
     log
-        Event log
+        Event log_skeleton
     variant
         Variant of the algorithm, possible values:
         - Variants.CLASSIC
@@ -40,7 +40,7 @@ def apply(log, variant=DEFAULT_VARIANT, parameters=None):
 
 def apply_from_variants_list(var_list, variant=DEFAULT_VARIANT, parameters=None):
     """
-    Discovers the log skeleton from the variants list
+    Discovers the log_skeleton skeleton from the variants list
 
     Parameters
     ---------------

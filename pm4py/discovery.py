@@ -1,11 +1,11 @@
 def discover_dfg(log):
     """
-    Discovers a DFG from a log
+    Discovers a DFG from a log_skeleton
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
 
     Returns
     --------------
@@ -32,7 +32,7 @@ def discover_petri_net_alpha(log):
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
 
     Returns
     --------------
@@ -54,7 +54,7 @@ def discover_petri_net_alpha_plus(log):
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
 
     Returns
     --------------
@@ -76,7 +76,7 @@ def discover_petri_net_inductive(log, noise_threshold=0.0):
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     noise_threshold
         Noise threshold (default: 0.0)
 
@@ -105,7 +105,7 @@ def discover_petri_net_heuristics(log, dependency_threshold=0.5, and_threshold=0
     Parameters
     ---------------
     log
-        Event log
+        Event log_skeleton
     dependency_threshold
         Dependency threshold (default: 0.5)
     and_threshold
@@ -136,7 +136,7 @@ def discover_tree_inductive(log, noise_threshold=0.0):
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     noise_threshold
         Noise threshold (default: 0.0)
 
@@ -161,7 +161,7 @@ def discover_heuristics_net(log, dependency_threshold=0.5, and_threshold=0.65, l
     Parameters
     ---------------
     log
-        Event log
+        Event log_skeleton
     dependency_threshold
         Dependency threshold (default: 0.5)
     and_threshold

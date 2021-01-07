@@ -14,7 +14,7 @@ def get_alignments_decoration(net, im, fm, log=None, aligned_traces=None, parame
     fm
         Final marking
     log
-        Event log
+        Event log_skeleton
     aligned_traces
         Aligned traces
     parameters

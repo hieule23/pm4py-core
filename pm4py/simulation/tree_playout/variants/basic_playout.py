@@ -9,7 +9,7 @@ class Parameters:
 
 def apply(tree, parameters=None):
     """
-    Generate a log by a playout operation
+    Generate a log_skeleton by a playout operation
 
     Parameters
     ---------------
@@ -21,8 +21,8 @@ def apply(tree, parameters=None):
 
     Returns
     --------------
-    log
-        Simulated log
+    log_skeleton
+        Simulated log_skeleton
     """
     if parameters is None:
         parameters = {}

@@ -7,7 +7,7 @@ from pm4py.objects.log.log import EventLog, Trace, Event
 
 def to_interval(log, parameters=None):
     """
-    Converts a log to interval format (e.g. an event has two timestamps)
+    Converts a log_skeleton to interval format (e.g. an event has two timestamps)
     from lifecycle format (an event has only a timestamp, and a transition lifecycle)
 
     Parameters
@@ -19,8 +19,8 @@ def to_interval(log, parameters=None):
 
     Returns
     -------------
-    log
-        Interval event log
+    log_skeleton
+        Interval event log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -89,7 +89,7 @@ def to_interval(log, parameters=None):
 
 def to_lifecycle(log, parameters=None):
     """
-    Converts a log from interval format (e.g. an event has two timestamps)
+    Converts a log_skeleton from interval format (e.g. an event has two timestamps)
     to lifecycle format (an event has only a timestamp, and a transition lifecycle)
 
     Parameters
@@ -101,8 +101,8 @@ def to_lifecycle(log, parameters=None):
 
     Returns
     -------------
-    log
-        Lifecycle event log
+    log_skeleton
+        Lifecycle event log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -158,12 +158,12 @@ def to_lifecycle(log, parameters=None):
 
 def assign_lead_cycle_time(log, parameters=None):
     """
-    Assigns the lead and cycle time to an interval log
+    Assigns the lead and cycle time to an interval log_skeleton
 
     Parameters
     -------------
     log
-        Interval log
+        Interval log_skeleton
     parameters
         Parameters of the algorithm, including: start_timestamp_key, timestamp_key, worktiming, weekends
     """

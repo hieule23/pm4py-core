@@ -16,13 +16,13 @@ VERSIONS = {Variants.DATAFRAME, Variants.LOG}
 
 def apply(log, list_activities, parameters=None):
     """
-    Finds the performance spectrum provided a log/dataframe
+    Finds the performance spectrum provided a log_skeleton/dataframe
     and a list of activities
 
     Parameters
     -------------
     log
-        Event log/Dataframe
+        Event log_skeleton/Dataframe
     list_activities
         List of activities interesting for the performance spectrum (at least two)
     parameters

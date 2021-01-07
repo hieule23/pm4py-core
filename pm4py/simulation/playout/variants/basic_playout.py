@@ -23,7 +23,7 @@ def apply_playout(net, initial_marking, no_traces=100, max_trace_length=100,
                   activity_key=xes_constants.DEFAULT_NAME_KEY, timestamp_key=xes_constants.DEFAULT_TIMESTAMP_KEY,
                   final_marking=None):
     """
-    Do the playout of a Petrinet generating a log
+    Do the playout of a Petrinet generating a log_skeleton
 
     Parameters
     ----------
@@ -75,7 +75,7 @@ def apply_playout(net, initial_marking, no_traces=100, max_trace_length=100,
 
 def apply(net, initial_marking, final_marking=None, parameters=None):
     """
-    Do the playout of a Petrinet generating a log
+    Do the playout of a Petrinet generating a log_skeleton
 
     Parameters
     -----------
@@ -87,7 +87,7 @@ def apply(net, initial_marking, final_marking=None, parameters=None):
         If provided, the final marking of the Petri net
     parameters
         Parameters of the algorithm:
-            Parameters.NO_TRACES -> Number of traces of the log to generate
+            Parameters.NO_TRACES -> Number of traces of the log_skeleton to generate
             Parameters.MAX_TRACE_LENGTH -> Maximum trace length
     """
     if parameters is None:

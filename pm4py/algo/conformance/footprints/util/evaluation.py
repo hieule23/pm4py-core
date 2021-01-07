@@ -10,17 +10,17 @@ PARALLEL = "parallel"
 
 def fp_fitness(fp_log, fp_model, conf_results, parameters=None):
     """
-    Calculates the footprints fitness provided the footprints of the log,
-    and the result of footprints conformance (applied to the entire log)
+    Calculates the footprints fitness provided the footprints of the log_skeleton,
+    and the result of footprints conformance (applied to the entire log_skeleton)
 
     Parameters
     ---------------
     fp_log
-        Footprints of the log
+        Footprints of the log_skeleton
     fp_model
         Footprints of the model
     conf_results
-        Footprints conformance (applied to the entire log)
+        Footprints conformance (applied to the entire log_skeleton)
     parameters
         Parameters of the algorithm
 
@@ -33,7 +33,7 @@ def fp_fitness(fp_log, fp_model, conf_results, parameters=None):
         parameters = {}
 
     if type(conf_results) is list:
-        raise Exception("method is working only on entire log footprints")
+        raise Exception("method is working only on entire log_skeleton footprints")
     elif type(conf_results) is dict:
         # extensive conformance variant
         footprints = conf_results[FOOTPRINTS_KEY]
@@ -64,12 +64,12 @@ def fp_fitness(fp_log, fp_model, conf_results, parameters=None):
 def fp_precision(fp_log, fp_model, parameters=None):
     """
     Calculates the footprints based precision provided the two footprints
-    of the log and the model.
+    of the log_skeleton and the model.
 
     Parameters
     --------------
     fp_log
-        Footprints of the log
+        Footprints of the log_skeleton
     fp_model
         Footprints of the model
     parameters

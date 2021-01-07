@@ -46,7 +46,7 @@ def get_diagnostics_dataframe(log, tbr_output, variant=DEFAULT_VARIANT, paramete
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     tbr_output
         Output of the token-based replay technique
     variant

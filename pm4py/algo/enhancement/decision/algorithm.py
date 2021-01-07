@@ -22,7 +22,7 @@ def get_decision_tree(log, net, initial_marking, final_marking, decision_point=N
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     net
         Petri net
     initial_marking
@@ -34,7 +34,7 @@ def get_decision_tree(log, net, initial_marking, final_marking, decision_point=N
         - if not specified, the method crashes, but provides a list of possible decision points
         - if specified, the method goes on and produce the decision tree
     attributes
-        Attributes of the log. If not specified, then an automatic attribute selection
+        Attributes of the log_skeleton. If not specified, then an automatic attribute selection
         is performed.
     parameters
         Parameters of the algorithm
@@ -68,7 +68,7 @@ def apply(log, net, initial_marking, final_marking, decision_point=None, attribu
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     net
         Petri net
     initial_marking
@@ -80,7 +80,7 @@ def apply(log, net, initial_marking, final_marking, decision_point=None, attribu
         - if not specified, the method crashes, but provides a list of possible decision points
         - if specified, the method goes on and produce the decision tree
     attributes
-        Attributes of the log. If not specified, then an automatic attribute selection
+        Attributes of the log_skeleton. If not specified, then an automatic attribute selection
         is performed.
     parameters
         Parameters of the algorithm
@@ -127,12 +127,12 @@ def apply(log, net, initial_marking, final_marking, decision_point=None, attribu
 def get_decisions_table(log0, net, initial_marking, final_marking, attributes=None, use_trace_attributes=False, k=1,
                         pre_decision_points=None, trace_attributes=None, parameters=None):
     """
-    Gets a decision table out of a log and an accepting Petri net
+    Gets a decision table out of a log_skeleton and an accepting Petri net
 
     Parameters
     -----------------
     log0
-        Event log
+        Event log_skeleton
     net
         Petri net
     initial_marking
@@ -197,7 +197,7 @@ def get_decisions_table(log0, net, initial_marking, final_marking, attributes=No
             print("Error: There must be at least one element in the list of trace_attributes.")
             sys.exit()
 
-    # alignment = ali.apply(log, net, initial_marking, final_marking, variant=True, parameters={star.PARAM_ALIGNMENT_RESULT_IS_SYNC_PROD_AWARE:True})
+    # alignment = ali.apply(log_skeleton, net, initial_marking, final_marking, variant=True, parameters={star.PARAM_ALIGNMENT_RESULT_IS_SYNC_PROD_AWARE:True})
     decision_points = get_decision_points(net, pre_decision_points=pre_decision_points, parameters=parameters)
     decision_points_names = get_decision_points(net, labels=True, pre_decision_points=pre_decision_points,
                                                 parameters=parameters)
@@ -317,7 +317,7 @@ def get_attributes(log, decision_points, attributes, use_trace_attributes, trace
     This method aims to construct for each decision place a table where for each decision place a list if given with the
      label of the later decision and as value the given attributes
     :param log: Log on which the method is applied
-    :param alignments: Computed alignments for a log and a model
+    :param alignments: Computed alignments for a log_skeleton and a model
     :param decision_points: Places that have multiple outgoing arcs
     :param attributes: Attributes that are considered
     :param use_trace_attributes: If trace attributes have to be considered or not
@@ -405,7 +405,7 @@ def get_attributes(log, decision_points, attributes, use_trace_attributes, trace
                                         else:
                                             I[key].append((element.copy(), el[1][1]))
                     if el[1][0] != '>>' and el[1][1] != '>>':
-                        # If there is a move in log and model
+                        # If there is a move in log_skeleton and model
                         for attri in attributes:
                             if attri in trace[j]:
                                 # only add the attribute information if it is present in the event

@@ -87,7 +87,7 @@ class SubtreePlain(object):
 
     def __deepcopy__(self, memodict={}):
         """
-            def __init__(self, log, dfg, master_dfg, initial_dfg, activities, counts, rec_depth, noise_threshold=0,
+            def __init__(self, log_skeleton, dfg, master_dfg, initial_dfg, activities, counts, rec_depth, noise_threshold=0,
                  start_activities=None, end_activities=None, initial_start_activities=None,
                  initial_end_activities=None, parameters=None, real_init=False):
         :param memodict:
@@ -140,7 +140,7 @@ class SubtreePlain(object):
             dfg
                 Directly follows graph of this subtree
             log
-                the event log
+                the event log_skeleton
             initial_dfg
                 Referral directly follows graph that should be taken in account adding hidden/loop transitions
             activities
@@ -476,8 +476,8 @@ class SubtreePlain(object):
                 this_nx_graph = transform_dfg_to_directed_nx_graph(self.dfg, activities=self.activities)
                 strongly_connected_components = [list(x) for x in nx.strongly_connected_components(this_nx_graph)]
                 xor_cut = self.detect_xor(conn_components)
-                # the following part searches for a cut in the current log
-                # if a cut is found, the log is split according to the cut, the resulting logs are saved in new_logs
+                # the following part searches for a cut in the current log_skeleton
+                # if a cut is found, the log_skeleton is split according to the cut, the resulting logs are saved in new_logs
                 # recursion is used on all the logs in new_logs
                 if xor_cut[0]:
                     logging.debug("xor_cut")
@@ -580,7 +580,7 @@ class SubtreePlain(object):
                                                      initial_end_activities=self.initial_end_activities,
                                                      parameters=parameters))
 
-                            # if the code gets to this point, there is no base_case and no cut found in the log
+                            # if the code gets to this point, there is no base_case and no cut found in the log_skeleton
                             # therefore, we now apply fall through:
                             else:
                                 self.apply_fall_through(parameters)
@@ -659,7 +659,7 @@ class SubtreePlain(object):
                                  initial_start_activities=self.initial_start_activities,
                                  initial_end_activities=self.initial_end_activities,
                                  parameters=parameters))
-                # continue with the recursion on the new log
+                # continue with the recursion on the new log_skeleton
                 start_activities = list(
                     start_activities_filter.get_start_activities(new_log, parameters=self.parameters).keys())
                 end_activities = list(
@@ -704,7 +704,7 @@ class SubtreePlain(object):
                                      initial_start_activities=self.initial_start_activities,
                                      initial_end_activities=self.initial_end_activities,
                                      parameters=parameters))
-                    # continue with the recursion on the new log:
+                    # continue with the recursion on the new log_skeleton:
                     start_activities = list(
                         start_activities_filter.get_start_activities(new_log, parameters=self.parameters).keys())
                     end_activities = list(

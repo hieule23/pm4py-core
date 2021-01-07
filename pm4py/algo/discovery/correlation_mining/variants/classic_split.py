@@ -17,7 +17,7 @@ class Parameters(Enum):
 
 def apply(log, parameters=None):
     """
-    Applies the correlation miner (splits the log in smaller chunks)
+    Applies the correlation miner (splits the log_skeleton in smaller chunks)
 
     Parameters
     ---------------

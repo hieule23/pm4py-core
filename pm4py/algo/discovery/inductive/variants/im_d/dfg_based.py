@@ -25,7 +25,7 @@ sys.setrecursionlimit(shared_constants.REC_LIMIT)
 
 def apply(log, parameters=None):
     """
-    Apply the IMDF algorithm to a log obtaining a Petri net along with an initial and final marking
+    Apply the IMDF algorithm to a log_skeleton obtaining a Petri net along with an initial and final marking
 
     Parameters
     -----------
@@ -33,7 +33,7 @@ def apply(log, parameters=None):
         Log
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns
@@ -82,10 +82,10 @@ def apply_variants(variants, parameters=None):
     Parameters
     -----------
     variants
-        Dictionary/list/set of variants in the log
+        Dictionary/list/set of variants in the log_skeleton
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns
@@ -107,15 +107,15 @@ def apply_variants(variants, parameters=None):
 
 def apply_tree_variants(variants, parameters=None):
     """
-    Apply the IMDF algorithm to a dictionary/list/set of variants a log obtaining a process tree
+    Apply the IMDF algorithm to a dictionary/list/set of variants a log_skeleton obtaining a process tree
 
     Parameters
     ----------
     variants
-        Dictionary/list/set of variants in the log
+        Dictionary/list/set of variants in the log_skeleton
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns
@@ -133,7 +133,7 @@ def apply_tree_variants(variants, parameters=None):
 
 def apply_tree(log, parameters=None):
     """
-    Apply the IMDF algorithm to a log obtaining a process tree
+    Apply the IMDF algorithm to a log_skeleton obtaining a process tree
 
     Parameters
     ----------
@@ -141,7 +141,7 @@ def apply_tree(log, parameters=None):
         Log
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns
@@ -158,15 +158,15 @@ def apply_tree(log, parameters=None):
     # get the DFG
     dfg = [(k, v) for k, v in dfg_inst.apply(log, parameters=parameters).items() if v > 0]
 
-    # gets the start activities from the log
+    # gets the start activities from the log_skeleton
     start_activities = log_start_act_stats.get_start_activities(log, parameters=parameters)
-    # gets the end activities from the log
+    # gets the end activities from the log_skeleton
     end_activities = log_end_act_stats.get_end_activities(log, parameters=parameters)
 
-    # get the activities in the log
+    # get the activities in the log_skeleton
     activities = log_attributes_stats.get_attribute_values(log, activity_key)
 
-    # check if the log contains empty traces
+    # check if the log_skeleton contains empty traces
     contains_empty_traces = False
     traces_length = [len(trace) for trace in log]
     if traces_length:
@@ -188,16 +188,16 @@ def apply_dfg(dfg, parameters=None, activities=None, contains_empty_traces=False
         Directly-Follows graph
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
     activities
         Activities of the process (default None)
     contains_empty_traces
-        Boolean value that is True if the event log from which the DFG has been extracted contains empty traces
+        Boolean value that is True if the event log_skeleton from which the DFG has been extracted contains empty traces
     start_activities
-        If provided, the start activities of the log
+        If provided, the start activities of the log_skeleton
     end_activities
-        If provided, the end activities of the log
+        If provided, the end activities of the log_skeleton
 
     Returns
     -----------
@@ -230,16 +230,16 @@ def apply_tree_dfg(dfg, parameters=None, activities=None, contains_empty_traces=
         Directly-follows graph
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
     activities
         Activities of the process (default None)
     contains_empty_traces
-        Boolean value that is True if the event log from which the DFG has been extracted contains empty traces
+        Boolean value that is True if the event log_skeleton from which the DFG has been extracted contains empty traces
     start_activities
-        If provided, the start activities of the log
+        If provided, the start activities of the log_skeleton
     end_activities
-        If provided, the end activities of the log
+        If provided, the end activities of the log_skeleton
 
     Returns
     ----------

@@ -16,7 +16,7 @@ class Parameters(Enum):
 
 def apply(log, admitted_end_activities, parameters=None):
     """
-    Filter the log on the specified end activities
+    Filter the log_skeleton on the specified end activities
 
     Parameters
     -----------
@@ -30,7 +30,7 @@ def apply(log, admitted_end_activities, parameters=None):
     Returns
     -----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}
@@ -42,7 +42,7 @@ def apply(log, admitted_end_activities, parameters=None):
 
 def filter_log_by_end_activities(end_activities, variants, vc, threshold, activity_key="concept:name"):
     """
-    Keep only variants of the log with an end activity which number of occurrences is above the threshold
+    Keep only variants of the log_skeleton with an end activity which number of occurrences is above the threshold
     
     Parameters
     ----------
@@ -55,12 +55,12 @@ def filter_log_by_end_activities(end_activities, variants, vc, threshold, activi
     threshold
         Cutting threshold (remove variants having end attributes which number of occurrences is below the threshold
     activity_key
-        (If specified) Specify the activity key in the log (default concept:name)
+        (If specified) Specify the activity key in the log_skeleton (default concept:name)
     
     Returns
     ----------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     filtered_log = EventLog()
     fvea = variants[vc[0][0]][0][-1][activity_key]
@@ -92,7 +92,7 @@ def apply_auto_filter(log, variants=None, parameters=None):
     Returns
     ---------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if parameters is None:
         parameters = {}

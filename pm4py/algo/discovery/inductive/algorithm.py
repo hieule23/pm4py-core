@@ -25,7 +25,7 @@ DEFAULT_VARIANT_DFG = IMd
 
 def apply(log, parameters=None, variant=DEFAULT_VARIANT_LOG):
     """
-    Apply the chosen IM algorithm to a log obtaining a Petri net along with an initial and final marking
+    Apply the chosen IM algorithm to a log_skeleton obtaining a Petri net along with an initial and final marking
 
     Parameters
     -------------
@@ -36,7 +36,7 @@ def apply(log, parameters=None, variant=DEFAULT_VARIANT_LOG):
         - Variants.IMd
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns
@@ -64,7 +64,7 @@ def apply_dfg(dfg, parameters=None, variant=DEFAULT_VARIANT_DFG):
         - Variants.IMd
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns
@@ -81,7 +81,7 @@ def apply_dfg(dfg, parameters=None, variant=DEFAULT_VARIANT_DFG):
 
 def apply_tree(log, parameters=None, variant=DEFAULT_VARIANT_LOG):
     """
-    Apply the chosen IM algorithm to a log obtaining a process tree
+    Apply the chosen IM algorithm to a log_skeleton obtaining a process tree
 
     Parameters
     ----------
@@ -92,7 +92,7 @@ def apply_tree(log, parameters=None, variant=DEFAULT_VARIANT_LOG):
         - Variants.IMd
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns
@@ -116,7 +116,7 @@ def apply_tree_dfg(dfg, parameters=None, variant=DEFAULT_VARIANT_DFG):
         - Variants.IMd
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns
@@ -134,13 +134,13 @@ def apply_variants(variants, parameters=None, variant=DEFAULT_VARIANT_VARIANTS):
     Parameters
     -----------
     variants
-        Dictionary/list/set of variants in the log
+        Dictionary/list/set of variants in the log_skeleton
     variant
         Variant of the algorithm to apply, possible values:
         - Variants.IMd
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name
             (default concept:name)
 
     Returns
@@ -157,18 +157,18 @@ def apply_variants(variants, parameters=None, variant=DEFAULT_VARIANT_VARIANTS):
 
 def apply_tree_variants(variants, parameters=None, variant=DEFAULT_VARIANT_VARIANTS):
     """
-    Apply the chosen IM algorithm to a dictionary/list/set of variants a log obtaining a process tree
+    Apply the chosen IM algorithm to a dictionary/list/set of variants a log_skeleton obtaining a process tree
 
     Parameters
     ----------
     variants
-        Dictionary/list/set of variants in the log
+        Dictionary/list/set of variants in the log_skeleton
     variant
         Variant of the algorithm to apply, possible values:
         - Variants.IMd
     parameters
         Parameters of the algorithm, including:
-            Parameters.ACTIVITY_KEY -> attribute of the log to use as activity name (default concept:name)
+            Parameters.ACTIVITY_KEY -> attribute of the log_skeleton to use as activity name (default concept:name)
 
     Returns
     ----------

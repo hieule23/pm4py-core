@@ -15,7 +15,7 @@ DEFAULT_VARIANT = Variants.APPROXIMATED_MATRIX_LP
 
 def apply(obj, pt, variant=DEFAULT_VARIANT, parameters=None):
     """
-    Align an event log or a trace with a process tree
+    Align an event log_skeleton or a trace with a process tree
 
     Parameters
     --------------

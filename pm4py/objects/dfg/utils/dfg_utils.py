@@ -54,7 +54,7 @@ def infer_start_activities(dfg):
     Returns
     ----------
     start_activities
-        Start activities in the log
+        Start activities in the log_skeleton
     """
     ingoing = get_ingoing_edges(dfg)
     outgoing = get_outgoing_edges(dfg)
@@ -80,7 +80,7 @@ def infer_end_activities(dfg):
     Returns
     ----------
     end_activities
-        End activities in the log
+        End activities in the log_skeleton
     """
     ingoing = get_ingoing_edges(dfg)
     outgoing = get_outgoing_edges(dfg)
@@ -742,7 +742,7 @@ def get_dfg_np_matrix(dfg):
 def get_dfg_sa_ea_act_from_variants(variants, parameters=None):
     """
     Gets the DFG, the start and end activities, and the activities
-    from the dictionary/set/list of variants in the log
+    from the dictionary/set/list of variants in the log_skeleton
 
     Parameters
     ---------------

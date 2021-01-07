@@ -287,7 +287,7 @@ def get_kde_caseduration(df, parameters=None):
 
 def get_kde_caseduration_json(df, parameters=None):
     """
-    Gets the estimation of KDE density for the case durations calculated on the log/dataframe
+    Gets the estimation of KDE density for the case durations calculated on the log_skeleton/dataframe
     (expressed as JSON)
 
     Parameters

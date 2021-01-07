@@ -44,5 +44,5 @@ def format_dataframe(df, case_id=constants.CASE_CONCEPT_NAME, activity_key=xes_c
     # sorts the dataframe
     df = df.sort_values([constants.CASE_CONCEPT_NAME, xes_constants.DEFAULT_TIMESTAMP_KEY, INDEX_COLUMN])
     # logging.warning(
-    #    "please convert the dataframe for advanced process mining applications. log = pm4py.convert_to_event_log(df)")
+    #    "please convert the dataframe for advanced process mining applications. log_skeleton = pm4py.convert_to_event_log(df)")
     return df

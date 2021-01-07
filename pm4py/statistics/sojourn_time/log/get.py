@@ -15,7 +15,7 @@ DIFF_KEY = "@@diff"
 
 def apply(log, parameters=None):
     """
-    Gets the sojourn time per activity on an event log object
+    Gets the sojourn time per activity on an event log_skeleton object
 
     Parameters
     --------------

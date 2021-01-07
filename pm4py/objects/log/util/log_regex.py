@@ -10,7 +10,7 @@ def get_encoded_trace(trace, mapping, parameters=None):
     Parameters
     -------------
     trace
-        Trace of the event log
+        Trace of the event log_skeleton
     mapping
         Mapping (activity to symbol)
 
@@ -32,12 +32,12 @@ def get_encoded_trace(trace, mapping, parameters=None):
 
 def get_encoded_log(log, mapping, parameters=None):
     """
-    Gets the encoding of the provided log
+    Gets the encoding of the provided log_skeleton
 
     Parameters
     -------------
     log
-        Event log
+        Event log_skeleton
     mapping
         Mapping (activity to symbol)
 
@@ -59,12 +59,12 @@ def get_encoded_log(log, mapping, parameters=None):
 
 def form_encoding_dictio_from_log(log, parameters=None):
     """
-    Forms the encoding dictionary from the current log
+    Forms the encoding dictionary from the current log_skeleton
 
     Parameters
     -------------
     log
-        Event log
+        Event log_skeleton
     parameters
         Parameters of the algorithm
 

@@ -21,7 +21,7 @@ def apply(tree, conf_results, parameters=None):
     tree
         Process tree
     conf_results
-        Conformance results (footprints on the entire log vs entire model)
+        Conformance results (footprints on the entire log_skeleton vs entire model)
     parameters
         Parameters of the algorithm
 

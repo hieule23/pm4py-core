@@ -10,13 +10,13 @@ class Parameters(Enum):
 
 def apply_single(log_footprints, model_footprints, parameters=None):
     """
-    Apply footprints conformance between a log footprints object
+    Apply footprints conformance between a log_skeleton footprints object
     and a model footprints object
 
     Parameters
     -----------------
     log_footprints
-        Footprints of the log (NOT a list, but a single footprints object)
+        Footprints of the log_skeleton (NOT a list, but a single footprints object)
     model_footprints
         Footprints of the model
     parameters
@@ -26,7 +26,7 @@ def apply_single(log_footprints, model_footprints, parameters=None):
     Returns
     ------------------
     violations
-        Set of all the violations between the log footprints
+        Set of all the violations between the log_skeleton footprints
         and the model footprints
     """
     if parameters is None:
@@ -51,13 +51,13 @@ def apply_single(log_footprints, model_footprints, parameters=None):
 
 def apply(log_footprints, model_footprints, parameters=None):
     """
-    Apply footprints conformance between a log footprints object
+    Apply footprints conformance between a log_skeleton footprints object
     and a model footprints object
 
     Parameters
     -----------------
     log_footprints
-        Footprints of the log
+        Footprints of the log_skeleton
     model_footprints
         Footprints of the model
     parameters
@@ -67,7 +67,7 @@ def apply(log_footprints, model_footprints, parameters=None):
     Returns
     ------------------
     violations
-        Set of all the violations between the log footprints
+        Set of all the violations between the log_skeleton footprints
         and the model footprints, OR list of case-per-case violations
     """
     if type(log_footprints) is list:
@@ -80,14 +80,14 @@ def apply(log_footprints, model_footprints, parameters=None):
 
 def get_diagnostics_dataframe(log, conf_result, parameters=None):
     """
-    Gets the diagnostics dataframe from the log
+    Gets the diagnostics dataframe from the log_skeleton
     and the results of footprints conformance checking
     (trace-by-trace)
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     conf_result
         Conformance checking results (trace-by-trace)
 

@@ -22,7 +22,7 @@ def apply(log, parameters=None, variant=CLASSIC):
     Parameters
     ------------
     log
-        Event log
+        Event log_skeleton
     parameters
         Possible parameters of the algorithm,
         including:
@@ -68,7 +68,7 @@ def apply_dfg(dfg, activities=None, activities_occurrences=None, start_activitie
     dfg
         Directly-Follows Graph
     activities
-        (If provided) list of activities of the log
+        (If provided) list of activities of the log_skeleton
     activities_occurrences
         (If provided) dictionary of activities occurrences
     start_activities
@@ -113,7 +113,7 @@ def apply_heu(log, parameters=None, variant=CLASSIC):
     Parameters
     ------------
     log
-        Event log
+        Event log_skeleton
     parameters
         Possible parameters of the algorithm,
         including:
@@ -152,7 +152,7 @@ def apply_heu_dfg(dfg, activities=None, activities_occurrences=None, start_activ
     dfg
         Directly-Follows Graph
     activities
-        (If provided) list of activities of the log
+        (If provided) list of activities of the log_skeleton
     activities_occurrences
         (If provided) dictionary of activities occurrences
     start_activities

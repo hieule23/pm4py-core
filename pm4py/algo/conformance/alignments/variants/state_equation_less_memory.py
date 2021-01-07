@@ -85,7 +85,7 @@ def apply_from_variants_list_petri_string(var_list, petri_net_string, parameters
 
 def apply_from_variants_list(var_list, petri_net, initial_marking, final_marking, parameters=None):
     """
-    Apply the alignments from the specification of a list of variants in the log
+    Apply the alignments from the specification of a list of variants in the log_skeleton
 
     Parameters
     -------------
@@ -590,9 +590,9 @@ def __align(model_struct, trace_struct, product_net, corresp, sync_cost=align_ut
                 this_closed.add(new_m)
             j = j + 1
 
-        # IMPORTANT: to reduce the complexity, assume that you can schedule a log move
+        # IMPORTANT: to reduce the complexity, assume that you can schedule a log_skeleton move
         # only if the previous move has not been a move-on-model.
-        # since this setting is equivalent to scheduling all the log moves before and then
+        # since this setting is equivalent to scheduling all the log_skeleton moves before and then
         # the model moves
         if -curr[POSITION_INDEX] < len(transf_trace) and curr[POSITION_TYPE_MOVE] != IS_MODEL_MOVE:
             dummy_count = dummy_count + 1
@@ -610,7 +610,7 @@ def __align(model_struct, trace_struct, product_net, corresp, sync_cost=align_ut
                 new_g, new_h, curr[POSITION_INDEX] - 1,
                 IS_LOG_MOVE, curr[POSITION_ALIGN_LENGTH]+1, dummy_count, curr, curr_m0, None, new_f, new_x, new_trustable)
             if not __check_closed(closed, (new_state[POSITION_MARKING], new_state[POSITION_INDEX])):
-                # adds the log move only if it has not been already closed before
+                # adds the log_skeleton move only if it has not been already closed before
                 open_set = __add_to_open_set(open_set, new_state)
 
 

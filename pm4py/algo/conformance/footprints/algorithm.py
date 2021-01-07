@@ -11,13 +11,13 @@ class Variants(Enum):
 
 def apply(log_footprints, model_footprints, variant=Variants.LOG_MODEL, parameters=None):
     """
-    Apply footprints conformance between a log footprints object
+    Apply footprints conformance between a log_skeleton footprints object
     and a model footprints object
 
     Parameters
     -----------------
     log_footprints
-        Footprints of the log
+        Footprints of the log_skeleton
     model_footprints
         Footprints of the model
     parameters
@@ -27,7 +27,7 @@ def apply(log_footprints, model_footprints, variant=Variants.LOG_MODEL, paramete
     Returns
     ------------------
     violations
-        Set/dictionary of all the violations between the log footprints
+        Set/dictionary of all the violations between the log_skeleton footprints
         and the model footprints, OR list of case-per-case violations
     """
     if parameters is None:

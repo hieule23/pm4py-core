@@ -15,13 +15,13 @@ DEFAULT_VARIANT = Variants.CLASSIC
 
 def apply(obj, model, variant=DEFAULT_VARIANT, parameters=None):
     """
-    Apply log-skeleton based conformance checking given an event log/trace
-    and a log-skeleton model
+    Apply log_skeleton-skeleton based conformance checking given an event log_skeleton/trace
+    and a log_skeleton-skeleton model
 
     Parameters
     --------------
     obj
-        Object (event log/trace)
+        Object (event log_skeleton/trace)
     model
         Log-skeleton model
     variant
@@ -52,7 +52,7 @@ def apply(obj, model, variant=DEFAULT_VARIANT, parameters=None):
 
 def apply_from_variants_list(var_list, model, variant=DEFAULT_VARIANT, parameters=None):
     """
-    Performs conformance checking using the log skeleton,
+    Performs conformance checking using the log_skeleton skeleton,
     applying it from a list of variants
 
     Parameters
@@ -70,7 +70,7 @@ def apply_from_variants_list(var_list, model, variant=DEFAULT_VARIANT, parameter
     --------------
     conformance_dictio
         Dictionary containing, for each variant, the result
-        of log skeleton checking
+        of log_skeleton skeleton checking
     """
     if parameters is None:
         parameters = {}
@@ -80,13 +80,13 @@ def apply_from_variants_list(var_list, model, variant=DEFAULT_VARIANT, parameter
 
 def get_diagnostics_dataframe(log, conf_result, variant=DEFAULT_VARIANT, parameters=None):
     """
-    Gets the diagnostics dataframe from a log and the results
-    of log skeleton-based conformance checking
+    Gets the diagnostics dataframe from a log_skeleton and the results
+    of log_skeleton skeleton-based conformance checking
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     conf_result
         Results of conformance checking
 

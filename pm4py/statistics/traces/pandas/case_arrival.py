@@ -16,7 +16,7 @@ def get_case_arrival_avg(df, parameters=None):
         Pandas dataframe
     parameters
         Parameters of the algorithm, including:
-            Parameters.TIMESTAMP_KEY -> attribute of the log to be used as timestamp
+            Parameters.TIMESTAMP_KEY -> attribute of the log_skeleton to be used as timestamp
 
     Returns
     --------------

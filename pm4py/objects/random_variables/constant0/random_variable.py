@@ -93,7 +93,7 @@ class Constant0(Uniform):
 
     def calculate_loglikelihood(self, values, tol=0.0001):
         """
-        Calculate log likelihood
+        Calculate log_skeleton likelihood
 
         Parameters
         ------------

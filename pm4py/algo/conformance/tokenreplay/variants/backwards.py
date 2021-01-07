@@ -318,7 +318,7 @@ def get_diagnostics_dataframe(log, tbr_output, parameters=None):
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     tbr_output
         Output of the token-based replay technique
 

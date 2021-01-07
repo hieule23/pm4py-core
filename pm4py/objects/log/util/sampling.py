@@ -6,19 +6,19 @@ from pm4py.objects.log.log import EventStream, EventLog
 
 def sample_stream(event_log, no_events=100):
     """
-    Randomly sample a fixed number of events from the original event log
+    Randomly sample a fixed number of events from the original event log_skeleton
 
     Parameters
     -----------
     event_log
-        Event log
+        Event log_skeleton
     no_events
         Number of events that the sample should have
 
     Returns
     -----------
     newLog
-        Filtered log
+        Filtered log_skeleton
     """
     new_log = EventStream(attributes=event_log.attributes, extensions=event_log.extensions, globals=event_log._omni,
                           classifiers=event_log.classifiers)
@@ -28,7 +28,7 @@ def sample_stream(event_log, no_events=100):
 
 def sample_log(log, no_traces=100):
     """
-    Randomly sample a fixed number of traces from the original log
+    Randomly sample a fixed number of traces from the original log_skeleton
 
     Parameters
     -----------
@@ -40,7 +40,7 @@ def sample_log(log, no_traces=100):
     Returns
     -----------
     newLog
-        Filtered log
+        Filtered log_skeleton
     """
     new_log = EventLog(attributes=log.attributes, extensions=log.extensions, globals=log._omni,
                        classifiers=log.classifiers)
@@ -50,19 +50,19 @@ def sample_log(log, no_traces=100):
 
 def sample(log, n=100):
     """
-    Randomly sample a fixed number of traces from the original log
+    Randomly sample a fixed number of traces from the original log_skeleton
 
     Parameters
     -----------
     log
-        Trace/event log
+        Trace/event log_skeleton
     n
         Number of elements that the sample should have
 
     Returns
     -----------
     newLog
-        Filtered log
+        Filtered log_skeleton
     """
 
     if type(log) is EventLog:

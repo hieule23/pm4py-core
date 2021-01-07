@@ -6,12 +6,12 @@ def get_log_encoded(event_log,
                     event_attributes=[],
                     concatenate=False):
     """
-    Get event log encoded into matrix.
+    Get event log_skeleton encoded into matrix.
 
     Parameters
     ------------
     event_log
-        Trace log
+        Trace log_skeleton
     trace_attributes
         Attributes of the trace to be encoded
     event_attributes
@@ -22,7 +22,7 @@ def get_log_encoded(event_log,
     Returns
     ------------
     dataset
-        A numpy matrix with the event log
+        A numpy matrix with the event log_skeleton
     columns
         The names of the columns in the dataset
     """
@@ -54,7 +54,7 @@ def get_log_encoded(event_log,
                         attr = None
                     trace_encoding.append(attr)
 
-                # For each trace in the event log, sequentially append the
+                # For each trace in the event log_skeleton, sequentially append the
                 # event sequence until that event
                 if concatenate is True:
                     if len(trace_encoding) > max_trace_len:

@@ -37,9 +37,9 @@ class SubtreeDFGBased():
         noise_threshold
             Noise threshold
         initial_start_activities
-            Start activities of the log
+            Start activities of the log_skeleton
         initial_end_activities
-            End activities of the log
+            End activities of the log_skeleton
         """
         self.master_dfg = copy(master_dfg)
         self.initial_dfg = copy(initial_dfg)
@@ -74,7 +74,7 @@ class SubtreeDFGBased():
 
         self.initialize_tree(dfg, initial_dfg, activities)
 
-        # start/end activities of the initial log intersected with the current set of activities
+        # start/end activities of the initial log_skeleton intersected with the current set of activities
         self.initial_start_activities = list(set(self.initial_start_activities).intersection(set(self.activities)))
         self.initial_end_activities = list(set(self.initial_end_activities).intersection(set(self.activities)))
 

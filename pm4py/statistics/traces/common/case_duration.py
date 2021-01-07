@@ -6,7 +6,7 @@ from pm4py.util import exec_utils
 
 def get_kde_caseduration(duration_values, parameters=None):
     """
-    Gets the estimation of KDE density for the case durations calculated on the log/dataframe
+    Gets the estimation of KDE density for the case durations calculated on the log_skeleton/dataframe
 
     Parameters
     --------------
@@ -45,7 +45,7 @@ def get_kde_caseduration(duration_values, parameters=None):
 
 def get_kde_caseduration_json(duration_values, parameters=None):
     """
-    Gets the estimation of KDE density for the case durations calculated on the log/dataframe
+    Gets the estimation of KDE density for the case durations calculated on the log_skeleton/dataframe
     (expressed as JSON)
 
     Parameters

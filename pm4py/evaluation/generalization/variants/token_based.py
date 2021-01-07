@@ -56,7 +56,7 @@ def get_generalization(petri_net, aligned_traces):
 
 def apply(log, petri_net, initial_marking, final_marking, parameters=None):
     """
-    Calculates generalization on the provided log and Petri net.
+    Calculates generalization on the provided log_skeleton and Petri net.
 
     The approach has been suggested by the paper
     Buijs, Joos CAM, Boudewijn F. van Dongen, and Wil MP van der Aalst. "Quality dimensions in process discovery:
@@ -73,7 +73,7 @@ def apply(log, petri_net, initial_marking, final_marking, parameters=None):
     Parameters
     -----------
     log
-        Trace log
+        Trace log_skeleton
     petri_net
         Petri net
     initial_marking

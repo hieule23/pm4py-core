@@ -64,7 +64,7 @@ class Exponential(BasicStructureRandomVariable):
 
     def calculate_loglikelihood(self, values):
         """
-        Calculate log likelihood
+        Calculate log_skeleton likelihood
 
         Parameters
         ------------

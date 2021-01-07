@@ -16,7 +16,7 @@ def filter_start_activities(log, admitted_start_activities):
     Returns
     --------------
     filtered_log
-        Filtered log object
+        Filtered log_skeleton object
     """
     if check_is_dataframe(log):
         check_dataframe_columns(log)
@@ -41,7 +41,7 @@ def filter_end_activities(log, admitted_end_activities):
     Returns
     ---------------
     filtered_log
-        Filtered log object
+        Filtered log_skeleton object
     """
     if check_is_dataframe(log):
         check_dataframe_columns(log)
@@ -54,7 +54,7 @@ def filter_end_activities(log, admitted_end_activities):
 
 def filter_attribute_values(log, attribute, values, how="cases", positive=True):
     """
-    Filter a log object on the values of some attribute
+    Filter a log_skeleton object on the values of some attribute
 
     Parameters
     --------------
@@ -73,7 +73,7 @@ def filter_attribute_values(log, attribute, values, how="cases", positive=True):
     Returns
     --------------
     filtered_log
-        Filtered log object
+        Filtered log_skeleton object
     """
     if check_is_dataframe(log):
         check_dataframe_columns(log)
@@ -98,12 +98,12 @@ def filter_attribute_values(log, attribute, values, how="cases", positive=True):
 
 def filter_trace_attribute(log, attribute, values, positive=True):
     """
-    Filter a log on the values of a trace attribute
+    Filter a log_skeleton on the values of a trace attribute
 
     Parameters
     --------------
     log
-        Event log
+        Event log_skeleton
     attribute
         Attribute to filter
     values
@@ -114,7 +114,7 @@ def filter_trace_attribute(log, attribute, values, positive=True):
     Returns
     --------------
     filtered_log
-        Filtered event log
+        Filtered event log_skeleton
     """
     if check_is_dataframe(log):
         check_dataframe_columns(log)
@@ -129,19 +129,19 @@ def filter_trace_attribute(log, attribute, values, positive=True):
 
 def filter_variants(log, admitted_variants):
     """
-    Filter a log on a specified set of variants
+    Filter a log_skeleton on a specified set of variants
 
     Parameters
     ---------------
     log
-        Event log
+        Event log_skeleton
     admitted_variants
         List of variants to filter
 
     Returns
     --------------
     filtered_log
-        Filtered log object
+        Filtered log_skeleton object
     """
     if check_is_dataframe(log):
         check_dataframe_columns(log)
@@ -154,23 +154,23 @@ def filter_variants(log, admitted_variants):
 
 def filter_variants_percentage(log, percentage=0.8):
     """
-    Filter a log on the percentage of variants
+    Filter a log_skeleton on the percentage of variants
 
     Parameters
     ---------------
     log
-        Event log
+        Event log_skeleton
     percentage
         Percentage of admitted variants
 
     Returns
     --------------
     filtered_log
-        Filtered log object
+        Filtered log_skeleton object
     """
     if check_is_dataframe(log):
         raise Exception(
-            "filtering variants percentage on Pandas dataframe is currently not available! please convert the dataframe to event log with the method: log =  pm4py.convert_to_event_log(df)")
+            "filtering variants percentage on Pandas dataframe is currently not available! please convert the dataframe to event log_skeleton with the method: log_skeleton =  pm4py.convert_to_event_log(df)")
     else:
         from pm4py.algo.filtering.log.variants import variants_filter
         return variants_filter.filter_log_variants_percentage(log, percentage=percentage)
@@ -178,7 +178,7 @@ def filter_variants_percentage(log, percentage=0.8):
 
 def filter_paths(log, allowed_paths, positive=True):
     """
-    Filter a log on a specified list of paths
+    Filter a log_skeleton on a specified list of paths
 
     Parameters
     ---------------
@@ -193,7 +193,7 @@ def filter_paths(log, allowed_paths, positive=True):
     Returns
     ----------------
     filtered_log
-        Filtered log object
+        Filtered log_skeleton object
     """
     if check_is_dataframe(log):
         from pm4py.algo.filtering.pandas.paths import paths_filter
@@ -205,7 +205,7 @@ def filter_paths(log, allowed_paths, positive=True):
 
 def filter_timestamp(log, dt1, dt2, how="events"):
     """
-    Filter a log on a time interval
+    Filter a log_skeleton on a time interval
 
     Parameters
     ----------------
@@ -221,7 +221,7 @@ def filter_timestamp(log, dt1, dt2, how="events"):
     Returns
     ----------------
     filtered_log
-        Filtered log
+        Filtered log_skeleton
     """
     if check_is_dataframe(log):
         from pm4py.algo.filtering.pandas.timestamp import timestamp_filter

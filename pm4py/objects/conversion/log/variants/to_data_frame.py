@@ -13,15 +13,15 @@ class Parameters(Enum):
 
 def apply(log, parameters=None):
     """
-    Converts a provided event log object into a Pandas dataframe. As a basis, an EventStream object is used.
+    Converts a provided event log_skeleton object into a Pandas dataframe. As a basis, an EventStream object is used.
     In case an EventLog object is given, it is first converted to an EventStream object.
     Within the conversion, the order is not changed, i.e., the order imposed by the iterator is used.
 
     Parameters
     -----------
 
-    log :class:`pm4py.log.log.EventLog`
-        Event log object, can either be an EventLog object, EventStream Object or Pandas dataframe
+    log_skeleton :class:`pm4py.log_skeleton.log_skeleton.EventLog`
+        Event log_skeleton object, can either be an EventLog object, EventStream Object or Pandas dataframe
 
     parameters :class:`dict`
         Parameters of the algorithm (currently, this converter is parameter free)
