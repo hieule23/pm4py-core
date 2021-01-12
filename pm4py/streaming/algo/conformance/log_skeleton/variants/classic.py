@@ -1,9 +1,7 @@
 from pm4py.util import constants, exec_utils, xes_constants
 from pm4py.streaming.algo.interface import StreamingAlgorithm
 import logging
-from pm4py.streaming.algo.conformance.log_skeleton.outputs import Outputs
-from copy import copy
-from threading import Lock
+from streaming.algo.conformance.log_skeleton.outputs import Outputs
 
 
 class Parameters:
@@ -11,14 +9,15 @@ class Parameters:
     ACTIVITY_KEY = constants.PARAMETER_CONSTANT_ACTIVITY_KEY
 
 
-class LogStreamingConformance(StreamingAlgorithm):
+class LogStreamingConformance(object):
     def __init__(self, log, parameters=None):
+        if parameters is None:
+            parameters = {}
         self.case_id_key = exec_utils.get_param_value(Parameters.CASE_ID_KEY, parameters, constants.CASE_CONCEPT_NAME)
         self.activity_key = exec_utils.get_param_value(Parameters.ACTIVITY_KEY, parameters,
                                                        xes_constants.DEFAULT_NAME_KEY)
         self.log = log
         self.build_dictionary()
-        StreamingAlgorithm.__init__(self)
 
     def build_dictionary(self):
         self.last_act_dict = {}
@@ -29,16 +28,16 @@ class LogStreamingConformance(StreamingAlgorithm):
                            Outputs.NEVER_TOGETHER.value: [],
                            Outputs.ALWAYS_BEFORE.value: []}
 
-    def _process(self, event):
+    def receive(self, event):
         """
-        Execution of the object when receive an event from live stream
-        Parameters
-        ----------
-        event
-            Event from live stream
-        Returns
-        -------
-            Check all the conditions in log_skeleton skeleton constraints
+                Execution of the object when receive an event from live stream
+                Parameters
+                ----------
+                event
+                    Event from live stream
+                Returns
+                -------
+                    Check all the conditions in log_skeleton skeleton constraints
         """
         self.check(event)
         self.update_dict(event)
@@ -51,6 +50,12 @@ class LogStreamingConformance(StreamingAlgorithm):
             Return the current status of conformance checking
         """
         return self.deviations
+
+    def update_deviation(self, case, error):
+        if case in self.deviations:
+            self.deviations[case].append(error)
+        else:
+            self.deviations[case] = [error]
 
     def check(self, event):
         """
@@ -99,9 +104,9 @@ class LogStreamingConformance(StreamingAlgorithm):
             act_1 = self.last_act_dict[case]
             act_2 = activity
             if (act_1, act_2) not in self.log[Outputs.DIRECTLY_FOLLOWS.value]:
-                self.message_directly_follows_not_fit(event)
-                error = (case, (act_1, act_2))
-                self.deviations[Outputs.DIRECTLY_FOLLOWS.value].append(error)
+                self.message_directly_follows_not_fit(act_2, act_1)
+                error = (Outputs.DIRECTLY_FOLLOWS.value, (activity, act_1))
+                self.update_deviation(case, error)
 
     def verify_frequency(self, event):
         case = event[self.case_id_key]
@@ -112,9 +117,9 @@ class LogStreamingConformance(StreamingAlgorithm):
                 if act_freq not in self.log[Outputs.ACTIV_FREQ.value]:
                     max_allow = max(self.log[Outputs.ACTIV_FREQ.value])
                     if act_freq > max_allow:
-                        self.message_freq_act_not_fit(event)
-                        error = (case, activity)
-                        self.deviations[Outputs.ACTIV_FREQ.value].append(error)
+                        self.message_freq_act_not_fit(case, activity, max_allow)
+                        error = (Outputs.ACTIV_FREQ.value, (activity, max_allow))
+                        self.update_deviation(case, error)
 
     def verify_always_before(self, event):
         case = event[self.case_id_key]
@@ -123,8 +128,10 @@ class LogStreamingConformance(StreamingAlgorithm):
             must_occur = set([x[1] for x in self.log[Outputs.ALWAYS_BEFORE.value] if x[0] == activity])
             act_occurred = set(self.act_in_trace_dict[case])
             if not must_occur.issubset(act_occurred):
-
-                self.message_always_before_not_fit(event)
+                not_occurred = must_occur - act_occurred
+                error = (Outputs.ALWAYS_BEFORE.value, (activity, not_occurred))
+                self.message_always_before_not_fit(case, activity, not_occurred)
+                self.update_deviation(case, error)
 
     def verify_never_together(self, event):
         case = event[self.case_id_key]
@@ -134,7 +141,10 @@ class LogStreamingConformance(StreamingAlgorithm):
                             [x[0] for x in self.log[Outputs.NEVER_TOGETHER.value] if x[1] == activity])
             act_occurred = set(self.act_in_trace_dict[case])
             if len(act_occurred.intersection(not_occur)) != 0:
-                self.message_never_together_not_fit(event)
+                deviation = act_occurred.intersection(not_occur)
+                error = (Outputs.NEVER_TOGETHER.value, (activity, deviation))
+                self.message_never_together_not_fit(case, activity, deviation)
+                self.update_deviation(case, error)
 
     def update_last_act_dict(self, event):
         case = event[self.case_id_key]
@@ -166,6 +176,27 @@ class LogStreamingConformance(StreamingAlgorithm):
         there in the event
         """
         logging.error("case or activities are none! " + str(event))
+
+    def message_directly_follows_not_fit(self, case, activity, act_1):
+        logging.error(
+            '"' + activity + '"' + " is not allowed in " + '"' + case + '"' + " due to directly follows constraint: "
+                                                                              "can not occur after " + act_1)
+
+    def message_freq_act_not_fit(self, case, activity, max_allow):
+        logging.error('"' + activity + '"' + " is not allowed in " + '"' + case + '"' + " due to frequency constraint: "
+                                                                                        "not more than " + str(
+            max_allow))
+
+    def message_always_before_not_fit(self, case, activity, not_occurred):
+        logging.error(
+            '"' + activity + '"' + " is not allowed in " + '"' + case + '"' + " due to constraint always before. " + str(
+                not_occurred) +
+            " need to occur first.")
+
+    def message_never_together_not_fit(self, case, activity, deviation):
+        logging.error(
+            '"' + activity + '"' + " is not allowed in " + '"' + case + '"' + " due to constraint never together with " +
+            str(deviation))
 
 
 def apply(log, parameters=None):
